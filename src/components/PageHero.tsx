@@ -1,11 +1,12 @@
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 
 type Props = {
   eyebrow: string;
   title: string;
   intro?: string;
   meta?: string[];
-  image?: string;
+  image?: string | StaticImageData;
   imageAlt?: string;
 };
 

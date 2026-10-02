@@ -2,6 +2,10 @@ node_modules/
 .next/
 out/
 build/
+
+# Original product photos — only the optimised copies in public/pics/ are
+# committed. Regenerate with `npm run images`.
+pics/
 .env*.local
 .DS_Store
 *.pem

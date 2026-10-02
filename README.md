@@ -12,6 +12,7 @@ npm run build      # → statyczny eksport w ./out
 npm start          # podgląd eksportu (npx serve out)
 npm run lint       # eslint
 npm run typecheck  # tsc --noEmit
+npm run images     # przetworzy pics/ -> src/assets/pics/
 ```
 
 `next start` **nie działa** przy `output: "export"` — do podglądu builda
@@ -60,9 +61,32 @@ Cała treść jest placeholderem — przed publikacją wymień:
 |---|---|
 | Dane firmy, telefon, e-mail, NIP, adres, social | `src/data/site.ts` |
 | Realizacje w portfolio | `src/data/portfolio.ts` |
+| **Produkty własne** | `src/data/products.ts` |
 | Zespół, zasady, cennik, FAQ | `src/app/o-nas`, `src/app/cooperacja` |
 | Domena w sitemap/robots/OG | `src/app/sitemap.ts`, `src/app/robots.ts`, `src/app/layout.tsx` |
 | Mapa (dziś OpenStreetMap, w placeholderze Warszawa) | `src/app/kontakt/page.tsx` |
+
+## Dodawanie zdjęć produktów
+
+Oryginały trzymaj w `pics/` (katalog jest ignorowany przez git), a potem:
+
+```bash
+npm run images
+```
+
+Skrypt zmniejsza je do 1500 px, kompresuje do JPEG (q82) i **slugifikuje
+nazwy plików** — `Lampa okno.jpg` staje się `lampa-okno.jpg`, bo spacje
+i polskie znaki w URL-u są kłopotliwe. Wynik ląduje w `src/assets/pics/`
+i to właśnie ten katalog jest w repozytorium.
+
+Zdjęcia są **importowane jako moduły**, a nie podawane jako ścieżki tekstowe.
+`next/image` nie dokleja `basePath` do zwykłego stringa w `src`, więc pliki
+z `public/` gubiłyby się przy wdrożeniu w podkatalogu (`/taka/`) — każde
+zdjęcie kończyłoby się 404. Import przez bundler sam dopisuje `basePath`
+i nadaje nazwy z hashem.
+
+Po dodaniu nowego produktu dopisz wpis w `src/data/products.ts`
+(`specs` i `price` są opcjonalne).
 
 ## Multimedia
 

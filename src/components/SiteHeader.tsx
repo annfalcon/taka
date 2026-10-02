@@ -45,7 +45,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
@@ -69,7 +69,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <a
             href={`tel:${site.phoneHref}`}
-            className="hidden text-sm text-muted transition-colors hover:text-ink lg:inline"
+            className="hidden text-sm text-muted transition-colors hover:text-ink xl:inline"
           >
             {site.phone}
           </a>
@@ -84,7 +84,7 @@ export function SiteHeader() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Zamknij menu" : "Otwórz menu"}
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
           >
             <span
               className={`h-px w-6 bg-ink transition-transform duration-300 ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
@@ -97,7 +97,7 @@ export function SiteHeader() {
       </div>
 
       <div
-        className={`overflow-hidden bg-paper transition-[max-height,opacity] duration-500 ease-out-expo md:hidden ${
+        className={`overflow-hidden bg-paper transition-[max-height,opacity] duration-500 ease-out-expo lg:hidden ${
           open ? "max-h-[26rem] opacity-100" : "max-h-0 opacity-0"
         }`}
       >

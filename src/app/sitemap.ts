@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/o-nas`, lastModified: now, changeFrequency: "yearly", priority: 0.7 },
     { url: `${base}/portfolio`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/cooperacja`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/produkty`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/kontakt`, lastModified: now, changeFrequency: "yearly", priority: 0.9 },
   ];
 }
