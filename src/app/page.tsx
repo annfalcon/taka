@@ -1,0 +1,223 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Hero } from "@/components/Hero";
+import { Reveal } from "@/components/Reveal";
+import { SectionHeading } from "@/components/SectionHeading";
+import { PortfolioGallery } from "@/components/PortfolioGallery";
+import { process, reviews, services, site, stats } from "@/data/site";
+import { projectCover, projects } from "@/data/portfolio";
+
+const coverOf = (slug: string) =>
+  projectCover(projects.find((p) => p.slug === slug)!);
+
+export default function HomePage() {
+  return (
+    <>
+      <Hero />
+
+      {/* Manifest + liczby */}
+      <section className="container-x pt-24 pb-20 md:pt-36 md:pb-28">
+        <div className="grid gap-14 md:grid-cols-12">
+          <div className="md:col-span-7">
+            <Reveal>
+              <p className="eyebrow">{site.tagline}</p>
+              <p className="mt-6 font-display text-3xl leading-[1.25] md:text-[2.75rem]">
+                {site.claim}
+              </p>
+            </Reveal>
+          </div>
+          <div className="md:col-span-4 md:col-start-9">
+            <Reveal delay={120}>
+              <p className="text-muted leading-relaxed">
+                Od {site.founded} roku projektujemy wnętrza w Warszawie i
+                okolicach. Pracujemy z ludźmi, którym zależy na proporcjach,
+                świetle i spokoju — a nie na efektownych zdjęcia. Każdy projekt
+                prowadzimy od pierwszej rozmowy do momentu, w którym w nim
+                mieszkasz.
+              </p>
+              <Link
+                href="/o-nas"
+                className="group border-ink/25 text-ink hover:border-clay mt-8 inline-flex items-center gap-3 border-b pb-1 text-sm transition-colors"
+              >
+                Poznaj pracownię
+                <span
+                  aria-hidden
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  →
+                </span>
+              </Link>
+            </Reveal>
+          </div>
+        </div>
+
+        <ul className="border-line mt-20 grid grid-cols-2 border-t md:mt-28 md:grid-cols-4">
+          {stats.map((s, i) => (
+            <Reveal
+              as="li"
+              key={s.label}
+              delay={i * 80}
+              className="border-line border-b py-8 md:border-r md:last:border-r-0 md:px-8 md:first:pl-0"
+            >
+              <p className="font-display text-4xl md:text-5xl">{s.value}</p>
+              <p className="text-muted mt-2 text-sm">{s.label}</p>
+            </Reveal>
+          ))}
+        </ul>
+      </section>
+
+      {/* Wybrane realizacje */}
+      <section className="bg-paper-2 py-20 md:py-28">
+        <div className="container-x">
+          <SectionHeading
+            eyebrow="Portfolio"
+            title="Wybrane realizacje"
+            intro="Nie wszystko, nad czym pracowaliśmy — tylko to, co możemy pokazać."
+            action={{ label: "Całe portfolio", href: "/portfolio" }}
+          />
+          <div className="mt-16">
+            <PortfolioGallery showFilters={false} limit={6} />
+          </div>
+        </div>
+      </section>
+
+      {/* Zakres usług */}
+      <section className="py-20 md:py-28">
+        <div className="container-x">
+          <SectionHeading
+            eyebrow="Zakres"
+            title="Co robimy"
+            intro="Od pierwszej koncepcji po książkę z wyposażeniem — albo pojedynczy etap, jeśli tak wolisz."
+          />
+          <ul className="mt-16 grid gap-px bg-line sm:grid-cols-2">
+            {services.map((s, i) => (
+              <Reveal
+                as="li"
+                key={s.title}
+                delay={i * 70}
+                className="group bg-paper p-8 transition-colors duration-500 hover:bg-white md:p-12"
+              >
+                <p className="text-muted text-xs tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mt-5 text-2xl leading-tight md:text-3xl">
+                  {s.title}
+                </h3>
+                <p className="text-muted mt-4 leading-relaxed">{s.body}</p>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Proces — obraz + kroki */}
+      <section className="bg-ink py-20 text-paper md:py-28">
+        <div className="container-x">
+          <div className="grid gap-14 md:grid-cols-12">
+            <div className="md:col-span-5">
+              <div className="md:sticky md:top-28">
+                <SectionHeading
+                  eyebrow="Proces"
+                  title="Jak pracujemy"
+                  intro="Pięć etapów, tyle samo obietnic. Zawsze wiesz, w którym jesteś i co dalej."
+                  tone="dark"
+                />
+                <div className="relative mt-12 hidden aspect-3/4 overflow-hidden md:block">
+                  <Image
+                    src="https://images.unsplash.com/photo-1749984739767-afd0cb96c3cb?auto=format&fit=crop&q=75"
+                    alt="Spiralne schody w budynku z surowego betonu"
+                    fill
+                    sizes="40vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <ol className="md:col-span-6 md:col-start-7">
+              {process.map((p, i) => (
+                <Reveal
+                  as="li"
+                  key={p.step}
+                  delay={i * 60}
+                  className="border-paper/15 flex gap-6 border-t py-8 first:border-t-0 first:pt-0 md:py-10"
+                >
+                  <span className="text-clay-soft font-display text-3xl tabular-nums">
+                    {p.step}
+                  </span>
+                  <div>
+                    <div className="flex flex-wrap items-baseline justify-between gap-3">
+                      <h3 className="font-display text-2xl md:text-3xl">
+                        {p.title}
+                      </h3>
+                      <span className="text-paper/40 text-xs">{p.meta}</span>
+                    </div>
+                    <p className="text-paper/70 mt-4 leading-relaxed">{p.body}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* Współpraca */}
+      <section className="py-20 md:py-28">
+        <div className="container-x">
+          <SectionHeading
+            eyebrow="Cooperacja"
+            title="Z kim pracujemy"
+            intro="Z indywidualnymi inwestorami, deweloperami i firmami. Różnimy się skalą — nie podejściem."
+            action={{ label: "Formy współpracy", href: "/cooperacja" }}
+          />
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
+            {[
+              { title: "Inwestor prywatny", img: coverOf("apartament-jeziorna"), alt: "Minimalistyczny salon z szarym sofa" },
+              { title: "Deweloper", img: coverOf("apartamenty-kolonia"), alt: "Luksusowe lobby z dużymi oknami" },
+              { title: "Hotelarstwo i gastronomia", img: coverOf("lobby-hotelowe"), alt: "Strefa wypoczynku z fotelami" },
+            ].map((c, i) => (
+              <Reveal key={c.title} delay={i * 80}>
+                <Link href="/cooperacja" className="group block">
+                  <div className="relative aspect-4/5 overflow-hidden bg-paper-2">
+                    <Image
+                      src={c.img}
+                      alt={c.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-[900ms] ease-out-expo group-hover:scale-[1.04]"
+                    />
+                  </div>
+                  <p className="mt-4 font-display text-2xl">{c.title}</p>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Opinie */}
+      <section className="bg-paper-2 py-20 md:py-28">
+        <div className="container-x">
+          <SectionHeading eyebrow="Opinie" title="Co mówią klienci" />
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            {reviews.map((r, i) => (
+              <Reveal
+                key={r.author}
+                delay={i * 80}
+                className="flex h-full flex-col justify-between border-t border-ink/15 pt-8"
+              >
+                <blockquote className="font-display text-xl leading-[1.4] md:text-2xl">
+                  „{r.quote}”
+                </blockquote>
+                <footer className="text-muted mt-8 text-sm">
+                  <span className="text-ink block">{r.author}</span>
+                  {r.role}
+                </footer>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
