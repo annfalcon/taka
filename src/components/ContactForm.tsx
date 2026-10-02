@@ -7,6 +7,15 @@ type Errors = Partial<Record<"name" | "email" | "phone" | "message" | "consent",
 
 type Status = "idle" | "sending" | "ok" | "error";
 
+/**
+ * A static export has no server to receive the POST, so the form cannot post to
+ * our own domain. Point NEXT_PUBLIC_CONTACT_ENDPOINT at a form backend
+ * (Formspree, Web3Forms, Basin, your own function) and the form will submit
+ * there directly. With no endpoint configured it falls back to opening the
+ * visitor's mail client with everything prefilled — no backend, no signup.
+ */
+const ENDPOINT = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT?.trim();
+
 const budgets = [
   "do 50 tys. zł",
   "50–100 tys. zł",
@@ -28,7 +37,6 @@ const scopes = [
 export function ContactForm() {
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<Status>("idle");
-  const [serverNote, setServerNote] = useState("");
 
   function validate(fd: FormData): Errors {
     const e: Errors = {};
@@ -61,25 +69,53 @@ export function ContactForm() {
       return;
     }
 
+    const name = String(fd.get("name") ?? "").trim();
+    const email = String(fd.get("email") ?? "").trim();
+    const message = String(fd.get("message") ?? "").trim();
+
+    // No backend configured — hand the visitor a prefilled email instead.
+    if (!ENDPOINT) {
+      const body = [
+        `Imię: ${name}`,
+        `E-mail: ${email}`,
+        `Telefon: ${String(fd.get("phone") ?? "").trim() || "—"}`,
+        `Rodzaj projektu: ${String(fd.get("scope") ?? "")}`,
+        `Metraż: ${String(fd.get("area") ?? "").trim() || "—"}`,
+        `Budżet: ${String(fd.get("budget") ?? "")}`,
+        "",
+        message,
+      ].join("\n");
+
+      window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
+        `Zapytanie o projekt — ${name}`,
+      )}&body=${encodeURIComponent(body)}`;
+
+      setStatus("ok");
+      form.reset();
+      return;
+    }
+
     setStatus("sending");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
-          name: String(fd.get("name")),
-          email: String(fd.get("email")),
-          phone: String(fd.get("phone")),
-          scope: String(fd.get("scope")),
-          budget: String(fd.get("budget")),
-          area: String(fd.get("area")),
-          message: String(fd.get("message")),
-          honeypot: String(fd.get("website") ?? ""),
+          name,
+          email,
+          phone: String(fd.get("phone") ?? "").trim(),
+          scope: String(fd.get("scope") ?? ""),
+          budget: String(fd.get("budget") ?? ""),
+          area: String(fd.get("area") ?? "").trim(),
+          message,
         }),
       });
-      const data = (await res.json()) as { ok?: boolean; error?: string; note?: string };
-      if (!res.ok || !data.ok) throw new Error(data.error ?? "Błąd serwera");
-      setServerNote(data.note ?? "");
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
       setStatus("ok");
       form.reset();
     } catch {
@@ -92,18 +128,29 @@ export function ContactForm() {
       <div className="border-line bg-paper-2 flex min-h-96 flex-col justify-center border p-10 text-center">
         <p className="eyebrow">Dziękujemy</p>
         <p className="mt-5 font-display text-3xl leading-tight md:text-4xl">
-          Wiadomość jest u nas.
+          {ENDPOINT ? "Wiadomość jest u nas." : "Otwarto Twojego klienta poczty."}
         </p>
         <p className="text-muted mx-auto mt-4 max-w-md leading-relaxed">
-          Odpowiadamy w ciągu jednego dnia roboczego. Jeśli sprawa jest pilna
-          — napisz lub zadzwoń:{" "}
-          <a href={`tel:${site.phoneHref}`} className="text-ink underline">
-            {site.phone}
-          </a>
+          {ENDPOINT ? (
+            <>
+              Odpowiadamy w ciągu jednego dnia roboczego. Jeśli sprawa jest
+              pilna — zadzwoń:{" "}
+              <a href={`tel:${site.phoneHref}`} className="text-ink underline">
+                {site.phone}
+              </a>
+            </>
+          ) : (
+            <>
+              Nie udostępniliśmy jeszcze usługi formularzy, więc wiadomość
+              trafiła do Twojego programu pocztowego. Jeśli się nie otworzyła,
+              napisz na{" "}
+              <a href={`mailto:${site.email}`} className="text-ink underline">
+                {site.email}
+              </a>
+              .
+            </>
+          )}
         </p>
-        {serverNote ? (
-          <p className="text-muted mt-6 text-xs">{serverNote}</p>
-        ) : null}
         <button
           type="button"
           onClick={() => setStatus("idle")}
@@ -185,13 +232,6 @@ export function ContactForm() {
           className={`${base} resize-y`}
         />
       </Field>
-
-      <div className="sr-only" aria-hidden>
-        <label>
-          Nie wypełniaj
-          <input name="website" tabIndex={-1} autoComplete="off" />
-        </label>
-      </div>
 
       <div>
         <label className="flex items-start gap-3 text-sm">

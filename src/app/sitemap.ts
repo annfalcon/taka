@@ -1,6 +1,10 @@
 import type { MetadataRoute } from "next";
 
+// Required for `output: "export"`.
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
+  // NOTE: replace with the real domain once it is live.
   const base = "https://taka-architektura.pl";
   const now = new Date();
 
