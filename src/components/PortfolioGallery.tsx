@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 import {
   categories,
-  projectCover,
   projects,
   type Category,
   type Project,
@@ -69,7 +68,7 @@ export function PortfolioGallery({
             >
               <div className="relative aspect-4/5 overflow-hidden bg-paper-2">
                 <Image
-                  src={projectCover(p)}
+                  src={p.photo}
                   alt={p.title}
                   fill
                   loading={i < 3 ? "eager" : "lazy"}
@@ -79,7 +78,8 @@ export function PortfolioGallery({
                 <div className="absolute inset-0 bg-linear-to-t from-ink/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <div className="absolute inset-x-0 bottom-0 translate-y-4 p-5 opacity-0 transition-all duration-500 ease-out-expo group-hover:translate-y-0 group-hover:opacity-100">
                   <p className="text-[0.65rem] tracking-[0.18em] text-paper/70 uppercase">
-                    {p.category} · {p.year}
+                    {p.category}
+                    {p.year ? ` · ${p.year}` : ""}
                   </p>
                   <p className="mt-1.5 font-display text-2xl text-paper">
                     {p.title}
@@ -91,13 +91,19 @@ export function PortfolioGallery({
                 <h3 className="font-display text-xl leading-tight">
                   {p.title}
                 </h3>
-                <span className="text-muted shrink-0 text-xs">
-                  {p.area}
-                </span>
+                {p.area ? (
+                  <span className="text-muted shrink-0 text-xs">{p.area}</span>
+                ) : null}
               </div>
-              <p className="text-muted mt-1 text-sm">
-                {p.place} · {p.scope}
-              </p>
+              {p.place || p.scope ? (
+                <p className="text-muted mt-1 text-sm">
+                  {[p.place, p.scope].filter(Boolean).join(" · ")}
+                </p>
+              ) : (
+                <p className="text-muted mt-1 text-sm">
+                  {p.photos.length} zdjęć w realizacji
+                </p>
+              )}
             </button>
           </li>
         ))}

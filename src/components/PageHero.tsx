@@ -18,6 +18,9 @@ export function PageHero({
   image,
   imageAlt,
 }: Props) {
+  const naturalRatio =
+    image && typeof image !== "string" ? `${image.width} / ${image.height}` : null;
+
   return (
     <section className="pt-32 pb-14 md:pt-44 md:pb-20">
       <div className="container-x">
@@ -53,14 +56,29 @@ export function PageHero({
 
       {image ? (
         <div className="container-x mt-14">
-          <div className="relative aspect-16/9 w-full overflow-hidden bg-paper-2 md:aspect-21/9">
+          {/*
+            A module import carries its own width/height, so the frame can match
+            the picture exactly and nothing gets cropped — `object-cover` in a
+            fixed 21:9 box cut a landscape shot down to a sliver. Remote images
+            (no dimensions available) keep the fixed-ratio frame.
+          */}
+          <div
+            className={`relative w-full overflow-hidden bg-paper-2 ${
+              naturalRatio ? "" : "aspect-16/9 md:aspect-21/9"
+            }`}
+            style={
+              naturalRatio
+                ? { aspectRatio: naturalRatio, maxHeight: "80svh" }
+                : undefined
+            }
+          >
             <Image
               src={image}
               alt={imageAlt ?? ""}
               fill
               priority
               sizes="100vw"
-              className="object-cover"
+              className={naturalRatio ? "object-contain" : "object-cover"}
             />
           </div>
         </div>

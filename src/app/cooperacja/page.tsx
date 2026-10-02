@@ -8,7 +8,7 @@ import { collaborators, cooperationTypes, process } from "@/data/site";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Cooperacja",
+  title: "Współpraca",
   description:
     "Formy współpracy z pracownią TAKA: inwestor prywatny, deweloper, firma i usługi, hotelarstwo i gastronomia. Sprawdź model pracy, role i koszty.",
 };
@@ -83,7 +83,7 @@ export default function CooperationPage() {
   return (
     <>
       <PageHero
-        eyebrow="Cooperacja"
+        eyebrow="Współpraca"
         title="Cztery modele współpracy"
         intro="Nie mamy jednego cennika, bo każde wnętrze jest inne. Poniżej cztery najczęstsze scenariusze — w nawiasie orientacyjny koszt projektu. Dokładną wycenę podajemy po rozmowie."
         meta={["Umowa i faktura VAT", "Wyceny w 5 dni roboczych", "Od 2014 roku"]}

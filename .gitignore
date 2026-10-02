@@ -1,11 +1,12 @@
-node_modules/
+
 .next/
 out/
 build/
+node_modules/
 
 # Original product photos — only the optimised copies in public/pics/ are
 # committed. Regenerate with `npm run images`.
-pics/
+/pics
 .env*.local
 .DS_Store
 *.pem
@@ -13,4 +14,4 @@ npm-debug.log*
 .env
 .vercel
 *.tsbuildinfo
-next-env.d.ts
+NEXT-env.d.ts

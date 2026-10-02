@@ -31,10 +31,14 @@ const QUALITY = 82;
 const SUPPORTED = new Set([".jpg", ".jpeg", ".png", ".webp"]);
 
 /**
- * Originals are named like `Lampa okno.jpg` and `stolik składany.jpg`. Spaces
- * and Polish diacritics have to be percent-encoded in every URL that references
- * them, which is fragile across servers and easy to get wrong by hand. Emit
- * ASCII, lowercase, dash-separated filenames instead.
+ * Originals are named like `Lampa okno.jpg` and `stolik składany.jpg`, and live
+ * in folders like `our products/`. Spaces, uppercase and Polish diacritics all
+ * have to be percent-encoded in every URL that references them, which is
+ * fragile across servers and easy to get wrong by hand. Emit ASCII, lowercase,
+ * dash-separated paths instead — every path segment, not just the filename.
+ *
+ * Everything is encoded to JPEG: the a_1 files are PNG renders of 1.7–2.3 MB
+ * each, and JPEG is what a browser would decode anyway.
  */
 const DIACRITICS = { ł: "l", Ł: "L", ó: "o", Ó: "O", ą: "a", Ą: "A", ę: "e", Ę: "E", ż: "z", Ż: "Z", ź: "z", Ź: "Z", ć: "c", Ć: "C", ń: "n", Ń: "N", ś: "s", Ś: "S" };
 
@@ -50,10 +54,10 @@ function slugify(segment) {
 
 function outputPathFor(file) {
   const rel = path.relative(SRC, file);
-  const { dir, name } = path.parse(rel);
-  const slug = slugify(name);
-  const ext = name.toLowerCase().endsWith(".png") ? ".png" : ".jpg";
-  return path.join(OUT, dir, `${slug}${ext}`);
+  const segments = rel.split(/[\\/]/);
+  const name = segments.pop();
+  const slug = slugify(path.parse(name).name);
+  return path.join(OUT, ...segments.map(slugify), `${slug}.jpg`);
 }
 
 async function* walk(dir) {

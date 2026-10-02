@@ -15,17 +15,17 @@
  */
 import type { StaticImageData } from "next/image";
 
-import domekDlaPsa from "@/assets/pics/domek-dla-psa.jpg";
-import lampaOkno from "@/assets/pics/lampa/lampa-okno.jpg";
-import lampaSerca from "@/assets/pics/lampa/lampa-serca.jpg";
-import lampaSerduszka from "@/assets/pics/lampa/lampa-serduszka.jpg";
-import ogolne from "@/assets/pics/ogolne.jpg";
-import skrzynkaNaKorki from "@/assets/pics/skrzynka-na-korki.jpg";
-import stolik from "@/assets/pics/stolik.jpg";
-import stolikSkladany from "@/assets/pics/stolik-skladany.jpg";
-import biurko10 from "@/assets/pics/biurko/biurko1-0.jpg";
-import biurko11 from "@/assets/pics/biurko/biurko1-1.jpg";
-import biurko111 from "@/assets/pics/biurko/biurko1-1-1.jpg";
+import domekDlaPsa from "@/assets/pics/our-products/domek-dla-psa.jpg";
+import lampaOkno from "@/assets/pics/our-products/lampa/lampa-okno.jpg";
+import lampaSerca from "@/assets/pics/our-products/lampa/lampa-serca.jpg";
+import lampaSerduszka from "@/assets/pics/our-products/lampa/lampa-serduszka.jpg";
+import ogolne from "@/assets/pics/our-products/ogolne.jpg";
+import skrzynkaNaKorki from "@/assets/pics/our-products/skrzynka-na-korki.jpg";
+import stolik from "@/assets/pics/our-products/stolik.jpg";
+import stolikSkladany from "@/assets/pics/our-products/stolik-skladany.jpg";
+import biurko10 from "@/assets/pics/our-products/biurko/biurko1-0.jpg";
+import biurko11 from "@/assets/pics/our-products/biurko/biurko1-1.jpg";
+import biurko111 from "@/assets/pics/our-products/biurko/biurko1-1-1.jpg";
 
 export type ProductCategory = "Lampy" | "Stoliki" | "Biurka" | "Dla domu";
 
@@ -113,20 +113,20 @@ export const products: Product[] = [
     lead: "Najnowsza wersja biurka z oferty.",
   },
   {
-    slug: "skrzynka-na-korki",
-    name: "Skrzynka na Korki",
-    category: "Dla domu",
-    image: skrzynkaNaKorki,
-    alt: "Skrzynka na korki — produkt pracowni TAKA",
-    lead: "Skrzynka na butelki po winie. Porządek w miejscu, w którym nikt go nie planował.",
-  },
-  {
     slug: "domek-dla-psa",
     name: "Domek dla Psa",
     category: "Dla domu",
     image: domekDlaPsa,
     alt: "Domek dla psa — produkt pracowni TAKA",
     lead: "Domek dla psa — wnętrze, które kończy się na kanapie.",
+  },
+  {
+    slug: "skrzynka-na-korki",
+    name: "Skrzynka na Korki",
+    category: "Dla domu",
+    image: skrzynkaNaKorki,
+    alt: "Skrzynka na korki — produkt pracowni TAKA",
+    lead: "Skrzynka na butelki po winie. Porządek w miejscu, w którym nikt go nie planował.",
   },
 ];
 

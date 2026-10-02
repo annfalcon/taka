@@ -5,10 +5,6 @@ import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PortfolioGallery } from "@/components/PortfolioGallery";
 import { process, reviews, services, site, stats } from "@/data/site";
-import { projectCover, projects } from "@/data/portfolio";
-
-const coverOf = (slug: string) =>
-  projectCover(projects.find((p) => p.slug === slug)!);
 
 export default function HomePage() {
   return (
@@ -29,7 +25,7 @@ export default function HomePage() {
           <div className="md:col-span-4 md:col-start-9">
             <Reveal delay={120}>
               <p className="text-muted leading-relaxed">
-                Od {site.founded} roku projektujemy wnętrza w Warszawie i
+                Od {site.founded} roku projektujemy wnętrza w Warszawie, Gdańsku i
                 okolicach. Pracujemy z ludźmi, którym zależy na proporcjach,
                 świetle i spokoju — a nie na efektownych zdjęcia. Każdy projekt
                 prowadzimy od pierwszej rozmowy do momentu, w którym w nim
@@ -165,33 +161,47 @@ export default function HomePage() {
       <section className="py-20 md:py-28">
         <div className="container-x">
           <SectionHeading
-            eyebrow="Cooperacja"
+            eyebrow="Współpraca"
             title="Z kim pracujemy"
             intro="Z indywidualnymi inwestorami, deweloperami i firmami. Różnimy się skalą — nie podejściem."
             action={{ label: "Formy współpracy", href: "/cooperacja" }}
           />
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
+          <ul className="border-line mt-16 grid gap-px bg-line md:grid-cols-3">
             {[
-              { title: "Inwestor prywatny", img: coverOf("apartament-jeziorna"), alt: "Minimalistyczny salon z szarym sofa" },
-              { title: "Deweloper", img: coverOf("apartamenty-kolonia"), alt: "Luksusowe lobby z dużymi oknami" },
-              { title: "Hotelarstwo i gastronomia", img: coverOf("lobby-hotelowe"), alt: "Strefa wypoczynku z fotelami" },
+              {
+                title: "Inwestor prywatny",
+                body: "Mieszkanie, dom, apartament. Najczęstszy scenariusz — i ten, w którym najwięcej zależy na rozmowie.",
+              },
+              {
+                title: "Deweloper",
+                body: "Apartamenty na sprzedaż i strefy wspólne. Współpraca w pakietach, terminowo i powtarzalnie.",
+              },
+              {
+                title: "Firma i usługi",
+                body: "Biuro, recepcja, showroom. Wnętrze, które pracuje razem z ludźmi, którzy w nim siedzą.",
+              },
             ].map((c, i) => (
-              <Reveal key={c.title} delay={i * 80}>
-                <Link href="/cooperacja" className="group block">
-                  <div className="relative aspect-4/5 overflow-hidden bg-paper-2">
-                    <Image
-                      src={c.img}
-                      alt={c.alt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-[900ms] ease-out-expo group-hover:scale-[1.04]"
-                    />
-                  </div>
-                  <p className="mt-4 font-display text-2xl">{c.title}</p>
+              <Reveal as="li" key={c.title} delay={i * 80} className="bg-paper p-8 md:p-10">
+                <p className="text-muted text-xs tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mt-5 text-2xl leading-tight">{c.title}</h3>
+                <p className="text-muted mt-4 leading-relaxed">{c.body}</p>
+                <Link
+                  href="/cooperacja"
+                  className="group border-ink/25 hover:border-clay text-ink mt-7 inline-flex items-center gap-3 border-b pb-1 text-sm transition-colors"
+                >
+                  Szczegóły
+                  <span
+                    aria-hidden
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
                 </Link>
               </Reveal>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 

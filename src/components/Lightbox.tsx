@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { projectImages, type Project } from "@/data/portfolio";
+import type { Project } from "@/data/portfolio";
 
 export function Lightbox({
   project,
@@ -14,7 +14,7 @@ export function Lightbox({
 }) {
   const [index, setIndex] = useState(0);
 
-  const images = project ? projectImages(project) : [];
+  const images = project?.photos ?? [];
 
   const close = useCallback(() => onClose(), [onClose]);
 
@@ -64,7 +64,9 @@ export function Lightbox({
         <div className="container-x flex items-center justify-between py-5">
           <div>
             <p className="eyebrow text-paper/50">
-              {project.category} · {project.year} · {project.area}
+              {project.category}
+              {project.year ? ` · ${project.year}` : ""}
+              {project.area ? ` · ${project.area}` : ""}
             </p>
             <h2 className="mt-1.5 font-display text-2xl text-paper md:text-3xl">
               {project.title}
@@ -83,14 +85,17 @@ export function Lightbox({
         <div className="container-x flex-1 pb-8">
           <div className="relative mx-auto aspect-4/3 w-full max-w-5xl overflow-hidden bg-ink-2 md:aspect-16/10">
             <Image
-              key={current.src}
-              src={current.src}
+              key={current.image.src}
+              src={current.image}
               alt={current.alt}
               fill
               sizes="100vw"
-              className="object-cover"
+              className="object-contain"
               quality={85}
             />
+            <span className="absolute bottom-3 left-3 rounded-full bg-ink/70 px-3 py-1 text-xs text-paper">
+              {current.label}
+            </span>
           </div>
 
           {images.length > 1 ? (
@@ -120,42 +125,41 @@ export function Lightbox({
               <p className="text-paper/75 text-base leading-relaxed md:text-lg">
                 {project.summary}
               </p>
-              <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-5 text-sm md:grid-cols-3">
-                <div>
-                  <dt className="text-paper/40">Lokalizacja</dt>
-                  <dd className="mt-1 text-paper">{project.place}</dd>
-                </div>
-                <div>
-                  <dt className="text-paper/40">Metraż</dt>
-                  <dd className="mt-1 text-paper">{project.area}</dd>
-                </div>
-                <div>
-                  <dt className="text-paper/40">Rok</dt>
-                  <dd className="mt-1 text-paper">{project.year}</dd>
-                </div>
-                <div className="col-span-2 md:col-span-3">
-                  <dt className="text-paper/40">Zakres</dt>
-                  <dd className="mt-1 text-paper">{project.scope}</dd>
-                </div>
-              </dl>
+              {project.place || project.area || project.year || project.scope ? (
+                <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-5 text-sm md:grid-cols-3">
+                  {project.place ? (
+                    <div>
+                      <dt className="text-paper/40">Lokalizacja</dt>
+                      <dd className="mt-1 text-paper">{project.place}</dd>
+                    </div>
+                  ) : null}
+                  {project.area ? (
+                    <div>
+                      <dt className="text-paper/40">Metraż</dt>
+                      <dd className="mt-1 text-paper">{project.area}</dd>
+                    </div>
+                  ) : null}
+                  {project.year ? (
+                    <div>
+                      <dt className="text-paper/40">Rok</dt>
+                      <dd className="mt-1 text-paper">{project.year}</dd>
+                    </div>
+                  ) : null}
+                  {project.scope ? (
+                    <div className="col-span-2 md:col-span-3">
+                      <dt className="text-paper/40">Zakres</dt>
+                      <dd className="mt-1 text-paper">{project.scope}</dd>
+                    </div>
+                  ) : null}
+                </dl>
+              ) : null}
             </div>
 
             <div className="md:col-span-5">
-              <p className="text-paper/40 text-[0.65rem] tracking-[0.18em] uppercase">
-                Zdjęcie
-              </p>
-              <a
-                href={project.credit.url}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="text-paper/70 hover:text-paper mt-2 inline-block text-sm underline underline-offset-4"
-              >
-                {project.credit.photographer} · Unsplash
-              </a>
               <Link
                 href="/kontakt"
                 onClick={close}
-                className="mt-8 block rounded-full bg-paper px-6 py-3.5 text-center text-sm text-ink transition-colors hover:bg-clay hover:text-paper"
+                className="block rounded-full bg-paper px-6 py-3.5 text-center text-sm text-ink transition-colors hover:bg-clay hover:text-paper"
               >
                 Chcę podobne wnętrze
               </Link>

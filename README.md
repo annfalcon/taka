@@ -75,9 +75,18 @@ npm run images
 ```
 
 Skrypt zmniejsza je do 1500 px, kompresuje do JPEG (q82) i **slugifikuje
-nazwy plików** — `Lampa okno.jpg` staje się `lampa-okno.jpg`, bo spacje
-i polskie znaki w URL-u są kłopotliwe. Wynik ląduje w `src/assets/pics/`
-i to właśnie ten katalog jest w repozytorium.
+nazwy plików oraz katalogów** — `Lampa okno.jpg` staje się `lampa-okno.jpg`,
+a `our products/` staje się `our-products/`, bo spacje i polskie znaki
+w URL-u są kłopotliwe. Wynik ląduje w `src/assets/pics/` i to właśnie ten
+katalog jest w repozytorium.
+
+Struktura oryginałów odwzorowuje to, co jest na stronie:
+
+```
+pics/
+  our products/       -> src/assets/pics/our-products/    (strona /produkty)
+  Portfolio/a_1/      -> src/assets/pics/portfolio/a-1/   (kategoria Mieszkania)
+```
 
 Zdjęcia są **importowane jako moduły**, a nie podawane jako ścieżki tekstowe.
 `next/image` nie dokleja `basePath` do zwykłego stringa w `src`, więc pliki
@@ -85,8 +94,19 @@ z `public/` gubiłyby się przy wdrożeniu w podkatalogu (`/taka/`) — każde
 zdjęcie kończyłoby się 404. Import przez bundler sam dopisuje `basePath`
 i nadaje nazwy z hashem.
 
-Po dodaniu nowego produktu dopisz wpis w `src/data/products.ts`
-(`specs` i `price` są opcjonalne).
+Po dodaniu nowego produktu dopisz wpis w `src/data/products.ts`,
+a po zdjęciach nowej realizacji — w `src/data/portfolio.ts`
+(`specs`/`price` oraz `year`/`place`/`area`/`scope` są opcjonalne —
+puste pola nie są w ogóle renderowane).
+
+## Zdjęcia stockowe
+
+W `src/data/portfolio.ts` została już tylko jedna kategoria (`Mieszkania`)
+z własnymi zdjęciami. Nadal korzystamy z kilku zdjęć stockowych poza
+portfolio — plakat w hero na stronie głównej oraz dwie ilustracje
+w sekcjach „Proces” i „Skala”. Źródła są w `heroVideo.poster` oraz
+w `stockImage()` w `src/data/portfolio.ts` — podmień je na własne,
+gdy będziesz mieć zdjęcia z realizacji.
 
 ## Multimedia
 
