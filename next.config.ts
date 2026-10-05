@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
 
   // Served from https://<user>.github.io/taka (repo name = "taka").
   // Set to "" when publishing to a custom domain or <user>.github.io.
-  basePath: "/taka",
+  basePath: "",
 
   // GitHub Pages resolves /o-nas only if /o-nas/index.html exists on disk.
   trailingSlash: true,
