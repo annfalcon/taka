@@ -112,7 +112,7 @@ export default function ContactPage() {
       <section aria-label="Mapa dojazdu" className="relative h-80 bg-paper-2 md:h-[26rem]">
         <iframe
           title="Mapa — lokalizacja pracowni"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=18.5415%2C54.4995%2C18.5815%2C54.5195&layer=mapnik&marker=54.5095%2C18.5615"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=18.5360%2C54.3988%2C18.5760%2C54.4188&layer=mapnik&marker=54.4088%2C18.5560"
           loading="lazy"
           className="absolute inset-0 h-full w-full"
           style={{ border: 0, filter: "grayscale(1) contrast(0.9)" }}
