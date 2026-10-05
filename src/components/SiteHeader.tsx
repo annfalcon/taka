@@ -8,14 +8,6 @@ import { nav, site } from "@/data/site";
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -29,11 +21,7 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-paper/85 border-line border-b backdrop-blur-xl"
-          : "border-b border-transparent"
-      }`}
+      className="bg-paper/85 fixed inset-x-0 top-0 z-50 backdrop-blur-sm"
     >
       <div className="container-x flex h-18 items-center justify-between gap-6">
         <Link href="/" className="group flex items-baseline gap-2.5">
