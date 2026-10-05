@@ -25,8 +25,8 @@ export default function HomePage() {
           <div className="md:col-span-4 md:col-start-9">
             <Reveal delay={120}>
               <p className="text-muted leading-relaxed">
-                Od {site.founded} roku projektujemy wnętrza w Warszawie, Gdańsku i
-                okolicach. Pracujemy z ludźmi, którym zależy na proporcjach,
+                Od {site.founded} roku projektujemy wnętrza w Warszawie, Gdańsku
+                i okolicach. Pracujemy z ludźmi, którym zależy na proporcjach,
                 świetle i spokoju — a nie na efektownych zdjęcia. Każdy projekt
                 prowadzimy od pierwszej rozmowy do momentu, w którym w nim
                 mieszkasz.
@@ -83,7 +83,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Zakres"
             title="Co robimy"
-            intro="Od pierwszej koncepcji po książkę z wyposażeniem — albo pojedynczy etap, jeśli tak wolisz."
+            intro="Od układu funkcjonalnego po kompleksowy projekt wykonawczy ze specyfikacją materiałową lub realizacja wybranego etapu inwestycji."
           />
           <ul className="mt-16 grid gap-px bg-line sm:grid-cols-2">
             {services.map((s, i) => (
@@ -118,15 +118,6 @@ export default function HomePage() {
                   intro="Pięć etapów, tyle samo obietnic. Zawsze wiesz, w którym jesteś i co dalej."
                   tone="dark"
                 />
-                <div className="relative mt-12 hidden aspect-3/4 overflow-hidden md:block">
-                  <Image
-                    src="https://images.unsplash.com/photo-1749984739767-afd0cb96c3cb?auto=format&fit=crop&q=75"
-                    alt="Spiralne schody w budynku z surowego betonu"
-                    fill
-                    sizes="40vw"
-                    className="object-cover"
-                  />
-                </div>
               </div>
             </div>
 
@@ -148,7 +139,9 @@ export default function HomePage() {
                       </h3>
                       <span className="text-paper/40 text-xs">{p.meta}</span>
                     </div>
-                    <p className="text-paper/70 mt-4 leading-relaxed">{p.body}</p>
+                    <p className="text-paper/70 mt-4 leading-relaxed">
+                      {p.body}
+                    </p>
                   </div>
                 </Reveal>
               ))}
@@ -170,18 +163,23 @@ export default function HomePage() {
             {[
               {
                 title: "Inwestor prywatny",
-                body: "Mieszkanie, dom, apartament. Najczęstszy scenariusz — i ten, w którym najwięcej zależy na rozmowie.",
+                body: "Wnętrza prywatne: domy, mieszkania i apartamenty. To nasz najczęstszy obszar działań i zarazem ten, w którym dobry projekt rodzi się przede wszystkim z uważnego dialogu.",
               },
               {
                 title: "Deweloper",
-                body: "Apartamenty na sprzedaż i strefy wspólne. Współpraca w pakietach, terminowo i powtarzalnie.",
+                body: "Wnętrza inwestycyjne i strefy wspólne. Proponujemy współpracę opartą na przejrzystych pakietach, gwarantując terminowość oraz sprawdzony, powtarzalny standard jakości.",
               },
               {
                 title: "Firma i usługi",
-                body: "Biuro, recepcja, showroom. Wnętrze, które pracuje razem z ludźmi, którzy w nim siedzą.",
+                body: "Biura, recepcje, showroomy. Tworzymy przestrzenie biznesowe, które aktywnie wspierają zespół, stając się funkcjonalnym narzędziem w codziennej pracy.",
               },
             ].map((c, i) => (
-              <Reveal as="li" key={c.title} delay={i * 80} className="bg-paper p-8 md:p-10">
+              <Reveal
+                as="li"
+                key={c.title}
+                delay={i * 80}
+                className="bg-paper p-8 md:p-10"
+              >
                 <p className="text-muted text-xs tabular-nums">
                   {String(i + 1).padStart(2, "0")}
                 </p>
