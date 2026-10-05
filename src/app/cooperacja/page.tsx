@@ -86,7 +86,7 @@ export default function CooperationPage() {
         eyebrow="Współpraca"
         title="Cztery modele współpracy"
         intro="Nie mamy jednego cennika, bo każde wnętrze jest inne. Poniżej cztery najczęstsze scenariusze — w nawiasie orientacyjny koszt projektu. Dokładną wycenę podajemy po rozmowie."
-        meta={["Umowa i faktura VAT", "Wyceny w 5 dni roboczych", "Od 2014 roku"]}
+        
         image="https://images.unsplash.com/photo-1723516908282-b3c795e9416a?auto=format&fit=crop&q=75"
         imageAlt="Lobby hotelowe z holem schodowym"
       />
@@ -172,11 +172,7 @@ export default function CooperationPage() {
         <div className="container-x">
           <div className="grid gap-16 md:grid-cols-12">
             <div className="md:col-span-6">
-              <SectionHeading
-                eyebrow="Role"
-                title="Kto za co odpowiada"
-                intro="Pracownia projektowa to podział zadań. Warto wiedzieć, kiedy wchodzimy my, a kiedy wykonawca."
-              />
+              
               <div className="relative mt-12 aspect-3/2 overflow-hidden bg-paper-2">
                 <Image
                   src="https://images.unsplash.com/photo-1774021793376-6dc8fb472358?auto=format&fit=crop&q=75"
