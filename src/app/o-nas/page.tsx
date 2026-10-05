@@ -32,8 +32,8 @@ export default function AboutPage() {
         <div className="container-x">
           <SectionHeading
             eyebrow="Zespół"
-            title="Sześć osób, jeden proces"
-            intro="Mały zespół jest tu wyborem, nie ograniczeniem. Dzięki niemu każdy projekt ma autora, a każdy autor ma czas."
+            title="Dwie osoby, wspólna wizja."
+            intro="Celowo działamy w mikroskali. Brak rozbudowanej struktury to nasz największy atut. To pewność, że od pierwszego szkicu aż po realizację rozmawiasz z autorem projektu, który ma czas na dopracowanie każdego detalu."
           />
 
           <ul className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -47,27 +47,7 @@ export default function AboutPage() {
                 name: "Katarzyna Nowak",
                 role: "Projektantka wnętrz",
                 bio: "Odpowiada za kompletację, materiały i światło. Zawsze pyta, co klient ma w domu i czego nie chce — to najszybsza droga do dobrego projektu.",
-              },
-              {
-                name: "Piotr Zieliński",
-                role: "Projekt techniczny",
-                bio: "Rysunki wykonawcze, układy instalacji, dobór okuć. Bez niego projekt wyglądałby świetnie na zdjęciu i rozpadł się na budowie.",
-              },
-              {
-                name: "Ewa Dąbrowska",
-                role: "Koordynacja i nadzór",
-                bio: "Na budowie dwa razy w tygodniu, bez wyjątku. Pilnuje harmonogramu i jakości wykonania. Klienci dzwonią do niej zamiast do kierownika.",
-              },
-              {
-                name: "Tomasz Górski",
-                role: "Zakup i logistyka",
-                bio: "Negocjuje z producentami mebli, śledzi dostawy, zamawia oświetlenie. Dzięki niemu na budowie nigdy nie brakuje drzwi.",
-              },
-              {
-                name: "Anna Lis",
-                role: "Architektka wnętrz",
-                bio: "Projektuje od 2021. Zajmuje się projektami komercyjnymi i kompletacją. Klienci nie uwierzyli jej na pierwszym spotkaniu — to bywa przełomowe.",
-              },
+              },              
             ].map((m, i) => (
               <Reveal
                 as="li"
@@ -77,7 +57,9 @@ export default function AboutPage() {
               >
                 <h3 className="font-display text-2xl">{m.name}</h3>
                 <p className="text-clay mt-1.5 text-sm">{m.role}</p>
-                <p className="text-muted mt-4 text-sm leading-relaxed">{m.bio}</p>
+                <p className="text-muted mt-4 text-sm leading-relaxed">
+                  {m.bio}
+                </p>
               </Reveal>
             ))}
           </ul>
@@ -172,7 +154,9 @@ export default function AboutPage() {
                       <h3 className="font-display text-xl">{p.title}</h3>
                       <span className="text-paper/40 text-xs">{p.meta}</span>
                     </div>
-                    <p className="text-paper/70 mt-3 leading-relaxed">{p.body}</p>
+                    <p className="text-paper/70 mt-3 leading-relaxed">
+                      {p.body}
+                    </p>
                   </div>
                 </Reveal>
               ))}
