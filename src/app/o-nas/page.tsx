@@ -17,11 +17,11 @@ export default function AboutPage() {
       <PageHero
         eyebrow="O nas"
         title="Mała pracownia z dużą dbałością"
-        intro="Jesteśmy zespołem, w którym każdy projekt prowadzi jedna osoba. Od pierwszej rozmowy do odbioru kluczy. Nie dzielimy zleceń między ludzi, którzy nigdy się nie spotkali."
+        intro="Nasza kameralna pracownia to dla Ciebie brak pośredników i gwarancja, że zawsze rozmawiasz bezpośrednio z autorką swojego wnętrza. Dzięki temu od pierwszego szkicu aż po finał na budowie, Twój projekt pozostaje w jednych, w pełni zaangażowanych rękach."
         meta={[
           `Od ${site.founded} roku`,
           `${site.city}, ${site.country}`,
-          "6 osób w zespole",
+          "Duet",
         ]}
         image="https://images.unsplash.com/photo-1676538627353-03b8e1eff168?auto=format&fit=crop&q=75"
         imageAlt="Wnętrze z długim korytarzem, kafelkową podłogą i oknami"

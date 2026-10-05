@@ -1,29 +1,27 @@
 import Image from "next/image";
-import { heroVideo } from "@/data/portfolio";
-import { HeroVideo } from "./HeroVideo";
+import { heroPoster } from "@/data/portfolio";
 
 export function Hero() {
-  const poster = `https://images.unsplash.com/${heroVideo.poster}?auto=format&fit=crop&q=75`;
+  const poster = `https://images.unsplash.com/${heroPoster.photo}?auto=format&fit=crop&q=75`;
 
   return (
     <section className="relative min-h-[92svh] overflow-hidden bg-ink-2">
       <Image
         src={poster}
-        alt="Nowoczesny salon z kominkiem i designerskimi meblami"
+        alt={heroPoster.alt}
         fill
         priority
         sizes="100vw"
         className="object-cover"
         quality={82}
       />
-      <HeroVideo src={heroVideo.src} />
 
       <div className="absolute inset-0 bg-linear-to-b from-ink/75 via-ink/35 to-ink/85" />
 
       <div className="container-x relative flex min-h-[92svh] flex-col justify-end pt-28 pb-14 md:pb-20">
         <div className="max-w-4xl">
           <p className="eyebrow text-paper/70 animate-rise">
-            Pracownia architektury wnętrz · {`Warszawa`}
+            Pracownia architektury wnętrz · {`Gdańsk Oliwa`}
           </p>
           <h1
             className="mt-6 text-[clamp(2.75rem,8vw,7rem)] leading-[0.95] text-paper animate-rise"
@@ -68,10 +66,6 @@ export function Hero() {
             Umów pierwszą rozmowę
           </a>
         </div>
-      </div>
-
-      <div className="pointer-events-none absolute right-6 bottom-6 hidden text-[0.6rem] tracking-[0.18em] text-paper/40 uppercase md:block">
-        Wideo: Pexels
       </div>
     </section>
   );

@@ -61,13 +61,9 @@ export const projects: Project[] = [
   },
 ];
 
-export const heroVideo = {
-  src: "https://videos.pexels.com/video-files/7578540/7578540-hd_1920_1080_30fps.mp4",
-  poster: "photo-1758915753369-6a33c7bc1d76",
-  credit: {
-    name: "Pexels",
-    url: "https://www.pexels.com",
-  },
+export const heroPoster = {
+  photo: "photo-1758915753369-6a33c7bc1d76",
+  alt: "Nowoczesny salon z kominkiem i designerskimi meblami",
 };
 
 /** Zdjęcie zastępcze dla sekcji, które nie odwołują się do konkretnej realizacji. */

@@ -6,15 +6,15 @@ export const site = {
   description:
     "TAKA to pracownia architektury wnętrz realizująca mieszkania, domy, biura i wnętrza komercyjne. Kompleksowo: koncepcja, projekt, nadzór nad wykonaniem.",
   founded: "2014",
-  city: "Warszawa",
+  city: "Gdańsk Oliwa",
   country: "Polska",
   email: "kontakt@taka-architektura.pl",
   phone: "+48 500 000 000",
   phoneHref: "+48500000000",
   address: {
     street: "ul. Przykładowa 12/4",
-    postal: "00-000",
-    city: "Warszawa",
+    postal: "80-006",
+    city: "Gdańsk Oliwa",
   },
   hours: "pon.–pt. 9:00–18:00",
   nip: "000 00 00 000",

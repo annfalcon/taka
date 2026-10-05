@@ -64,7 +64,7 @@ Cała treść jest placeholderem — przed publikacją wymień:
 | **Produkty własne** | `src/data/products.ts` |
 | Zespół, zasady, cennik, FAQ | `src/app/o-nas`, `src/app/cooperacja` |
 | Domena w sitemap/robots/OG | `src/app/sitemap.ts`, `src/app/robots.ts`, `src/app/layout.tsx` |
-| Mapa (dziś OpenStreetMap, w placeholderze Warszawa) | `src/app/kontakt/page.tsx` |
+| Mapa (dziś OpenStreetMap, w placeholderze Gdańsk Oliwa) | `src/app/kontakt/page.tsx` |
 
 ## Dodawanie zdjęć produktów
 
@@ -104,13 +104,13 @@ puste pola nie są w ogóle renderowane).
 W `src/data/portfolio.ts` została już tylko jedna kategoria (`Mieszkania`)
 z własnymi zdjęciami. Nadal korzystamy z kilku zdjęć stockowych poza
 portfolio — plakat w hero na stronie głównej oraz dwie ilustracje
-w sekcjach „Proces” i „Skala”. Źródła są w `heroVideo.poster` oraz
+w sekcjach „Proces” i „Skala”. Źródła są w `heroPoster.photo` oraz
 w `stockImage()` w `src/data/portfolio.ts` — podmień je na własne,
 gdy będziesz mieć zdjęcia z realizacji.
 
 ## Multimedia
 
-Zdjęcia z [Unsplash](https://unsplash.com), film w hero z [Pexels](https://pexels.com)
+Zdjęcia z [Unsplash](https://unsplash.com) i [Pexels](https://pexels.com)
 — licencje pozwalają na użycie komercyjne. W stopce i w lightboxie są kredyty
 autorskie. To materiały poglądowe: **podmień je na własne realizacje**
 (w `logo/Logo.jpeg` masz już swoje logo).

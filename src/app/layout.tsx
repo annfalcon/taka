@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "projekt wnętrz",
     "architekt wnętrz",
     "pracownia architektoniczna",
-    "projektant wnętrz Warszawa",
+    "projektant wnętrz Gdańsk Oliwa",
     "aranżacja mieszkania",
     "wykończenie mieszkania",
   ],

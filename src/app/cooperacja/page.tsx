@@ -74,7 +74,7 @@ const faq = [
     a: "Koncepcja zajmuje 2–4 tygodnie, projekt autorski 6–10 tygodni. Sama realizacja — od 3 do 9 miesięcy, zależnie od zakresu i dostępności materiałów.",
   },
   {
-    q: "Czy pracujecie poza Warszawą?",
+    q: "Czy pracujecie poza Gdańskiem?",
     a: "Tak, w granicach całego kraju. Spotkania i nadzór odbywają się na miejscu, a dokumentację przekazujemy w formie elektronicznej. Dla projektów poza regionem dojeżdżamy na kluczowe etapy.",
   },
 ];
