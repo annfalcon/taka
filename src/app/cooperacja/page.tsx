@@ -86,7 +86,6 @@ export default function CooperationPage() {
         eyebrow="Współpraca"
         title="Cztery modele współpracy"
         intro="Nie mamy jednego cennika, bo każde wnętrze jest inne. Poniżej cztery najczęstsze scenariusze — w nawiasie orientacyjny koszt projektu. Dokładną wycenę podajemy po rozmowie."
-        
         image="https://images.unsplash.com/photo-1723516908282-b3c795e9416a?auto=format&fit=crop&q=75"
         imageAlt="Lobby hotelowe z holem schodowym"
       />
@@ -146,10 +145,15 @@ export default function CooperationPage() {
                 <p className="font-display text-clay mt-4 text-3xl">
                   {e.price}
                 </p>
-                <p className="text-muted mt-3 text-sm leading-relaxed">{e.body}</p>
+                <p className="text-muted mt-3 text-sm leading-relaxed">
+                  {e.body}
+                </p>
                 <ul className="mt-7 space-y-2.5 text-sm">
                   {e.items.map((it) => (
-                    <li key={it} className="border-line flex gap-3 border-b pb-2.5">
+                    <li
+                      key={it}
+                      className="border-line flex gap-3 border-b pb-2.5"
+                    >
                       <span className="bg-clay mt-2 h-1 w-1 shrink-0 rounded-full" />
                       {it}
                     </li>
@@ -172,7 +176,6 @@ export default function CooperationPage() {
         <div className="container-x">
           <div className="grid gap-16 md:grid-cols-12">
             <div className="md:col-span-6">
-              
               <div className="relative mt-12 aspect-3/2 overflow-hidden bg-paper-2">
                 <Image
                   src="https://images.unsplash.com/photo-1774021793376-6dc8fb472358?auto=format&fit=crop&q=75"
@@ -188,7 +191,10 @@ export default function CooperationPage() {
               <p className="eyebrow">Zespół projektowy</p>
               <ul className="mt-6 grid grid-cols-2 gap-x-8 gap-y-6">
                 {collaborators.map((c) => (
-                  <li key={c} className="border-line flex gap-3 border-t pt-4 text-sm">
+                  <li
+                    key={c}
+                    className="border-line flex gap-3 border-t pt-4 text-sm"
+                  >
                     <span className="bg-clay mt-1.5 h-1 w-1 shrink-0 rounded-full" />
                     {c}
                   </li>
@@ -205,7 +211,6 @@ export default function CooperationPage() {
                       </span>
                       <div>
                         <p className="text-sm">{p.title}</p>
-                        <p className="text-muted mt-1 text-xs">{p.meta}</p>
                       </div>
                     </li>
                   ))}

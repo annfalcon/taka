@@ -18,19 +18,17 @@ export default function AboutPage() {
         eyebrow="O nas"
         title="Mała pracownia z wielką dbałością o szczegóły."
         intro="Nasza kameralna pracownia to dla Ciebie brak pośredników i gwarancja, że zawsze rozmawiasz bezpośrednio z autorką swojego wnętrza. Dzięki temu od pierwszego szkicu aż po finał realizacji, Twój projekt pozostaje w jednych, w pełni zaangażowanych rękach. "
-        image="https://images.unsplash.com/photo-1676538627353-03b8e1eff168?auto=format&fit=crop&q=75"
-        imageAlt="Wnętrze z długim korytarzem, kafelkową podłogą i oknami"
+        image="https://images.unsplash.com/photo-1744627049721-73c27008ad28?auto=format&fit=crop&q=75&w=2400"
+        imageAlt="Projektanci omawiający dokumentację projektową przed ekranem komputera"
       />
-
       {/* Zespół */}
-      <section className="py-20 md:py-28">
+      <section className="py-5 md:py-10">
         <div className="container-x">
           <SectionHeading
             eyebrow="Zespół"
             title="Dwie osoby, wspólna wizja."
             intro="Praca w duecie pozwala nam spojrzeć na każdy projekt z dwóch różnych perspektyw. Dzięki temu masz pewność, że żadne rozwiązanie nie jest przypadkowe, a najmniejszy detal nie umknie naszej uwadze."
           />
-
           <ul className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
@@ -89,7 +87,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      
       {/* Proces + zakres */}
       <section className="bg-ink py-20 text-paper md:py-28">
         <div className="container-x">
@@ -98,7 +95,6 @@ export default function AboutPage() {
             title="Od pomysłu do kluczy"
             tone="dark"
           />
-
           <div className="mt-16 grid gap-16 md:grid-cols-12">
             <ol className="md:col-span-7">
               {process.map((p, i) => (
@@ -114,7 +110,6 @@ export default function AboutPage() {
                   <div>
                     <div className="flex flex-wrap items-baseline justify-between gap-3">
                       <h3 className="font-display text-xl">{p.title}</h3>
-                      <span className="text-paper/40 text-xs">{p.meta}</span>
                     </div>
                     <p className="text-paper/70 mt-3 leading-relaxed">
                       {p.body}

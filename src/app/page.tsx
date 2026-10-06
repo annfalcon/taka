@@ -25,11 +25,10 @@ export default function HomePage() {
           <div className="md:col-span-4 md:col-start-9">
             <Reveal delay={120}>
               <p className="text-muted leading-relaxed">
-                Projektujemy wnętrza w Warszawie, Gdańsku
-                i okolicach. Pracujemy z ludźmi, którym zależy na proporcjach,
-                świetle i spokoju — a nie na efektownych zdjęcia. Każdy projekt
-                prowadzimy od pierwszej rozmowy do momentu, w którym w nim
-                mieszkasz.
+                Projektujemy wnętrza w Warszawie, Gdańsku i okolicach. Pracujemy
+                z ludźmi, którym zależy na proporcjach, świetle i spokoju — a
+                nie na efektownych zdjęcia. Każdy projekt prowadzimy od
+                pierwszej rozmowy do momentu, w którym w nim mieszkasz.
               </p>
               <Link
                 href="/o-nas"
@@ -46,20 +45,6 @@ export default function HomePage() {
             </Reveal>
           </div>
         </div>
-
-        <ul className="border-line mt-20 grid grid-cols-2 border-t md:mt-28 md:grid-cols-4">
-          {stats.map((s, i) => (
-            <Reveal
-              as="li"
-              key={s.label}
-              delay={i * 80}
-              className="border-line border-b py-8 md:border-r md:last:border-r-0 md:px-8 md:first:pl-0"
-            >
-              <p className="font-display text-4xl md:text-5xl">{s.value}</p>
-              <p className="text-muted mt-2 text-sm">{s.label}</p>
-            </Reveal>
-          ))}
-        </ul>
       </section>
 
       {/* Wybrane realizacje */}
@@ -137,7 +122,6 @@ export default function HomePage() {
                       <h3 className="font-display text-2xl md:text-3xl">
                         {p.title}
                       </h3>
-                      <span className="text-paper/40 text-xs">{p.meta}</span>
                     </div>
                     <p className="text-paper/70 mt-4 leading-relaxed">
                       {p.body}
