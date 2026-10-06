@@ -16,8 +16,7 @@ export default function PortfolioPage() {
     <>
       <PageHero
         eyebrow="Portfolio"
-        title="Rzeczy, w których się mieszka"
-        intro="Kliknij realizację, żeby przejść przez poszczególne pomieszczenia."
+        title="Przestrzeń do życia"
         meta={[
           `${projects.length} ${projects.length === 1 ? "realizacja" : "realizacji"}`,
           `${photoCount} zdjęć`,

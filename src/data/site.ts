@@ -43,16 +43,12 @@ export const services = [
     body: "Mieszkania, domy jednorodzinne i apartamenty. Od układu funkcjonalnego, przez materiały i światło, po ostatni kubek na półce.",
   },
   {
-    title: "Projekt wnętrz komercyjnych",
-    body: "Biura, showroomy, restauracje, hotele i gabinety. Wnętrza, które pracują na markę i na przychód.",
-  },
-  {
     title: "Nadzór autorski i realizacja",
     body: "Jesteśmy na budowie. Kontrolujemy wykonawców, materiały i harmonogram, żeby projekt nie rozjechał się w trakcie budowy.",
   },
   {
-    title: "Zdobycze i wykończenie",
-    body: "Dobór farb, tkanin, oświetlenia i dodatków. Kompletujemy wnętrze jako całość — nie składamy projektu z przypadkowych elementów.",
+    title: 'Stylizacja i wykończenie "pod klucz"',
+    body: "Kompletujemy wnętrze jako spójną całość - nie składamy projektu z przypadkowych elementów.",
   },
 ] as const;
 
@@ -60,7 +56,7 @@ export const process = [
   {
     step: "01",
     title: "Rozmowa i spotkanie",
-    body: "Poznajemy Wasze potrzeby, budżet i styl życia. Na rozmowę rezerwujemy około godziny — czasem to wystarczy, czasem spotkanie trwa dłużej. Zawsze zostaje coś do przemyślenia.",
+    body: "Poznajemy Wasze potrzeby, budżet i styl życia. Na rozmowę rezerwujemy około godziny - czasem to wystarczy, czasem spotkanie trwa dłużej. Zawsze zostaje coś do przemyślenia.",
   },
   {
     step: "02",
