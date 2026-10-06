@@ -2,7 +2,8 @@ export const site = {
   name: "TAKA",
   fullName: "TAKA pracownia architektoniczna",
   tagline: "Pracownia architektury wnętrz",
-  claim: "Wnętrza, w których chce się mieszkać. Projektujemy od pierwszej rozmowy do ostatniej książki z wyposażeniem.",
+  claim:
+    "Wnętrza, w których chce się mieszkać. Projektujemy od pierwszej rozmowy do ostatniej książki z wyposażeniem.",
   description:
     "TAKA to pracownia architektury wnętrz realizująca mieszkania, domy, biura i wnętrza komercyjne. Kompleksowo: koncepcja, projekt, nadzór nad wykonaniem.",
   founded: "2014",
@@ -34,12 +35,7 @@ export const nav = [
   { label: "Kontakt", href: "/kontakt" },
 ] as const;
 
-export const stats = [
-  { value: "11", label: "lat praktyki" },
-  { value: "140+", label: "zrealizowanych wnętrz" },
-  { value: "38", label: "m² średnio na projekt" },
-  { value: "9", label: "nagród i wyróżnień" },
-];
+export const stats = [];
 
 export const services = [
   {
@@ -64,46 +60,41 @@ export const process = [
   {
     step: "01",
     title: "Rozmowa i spotkanie",
-    body: "Poznajemy Wasze potrzeby, budżet i styl życia. Mamy już około godziny — czasem wystarczy, czasem spotkanie trwa dłużej. Zawsze zostaje coś do przemyślenia.",
-    meta: "1–2 tygodnie",
+    body: "Poznajemy Wasze potrzeby, budżet i styl życia. Na rozmowę rezerwujemy około godziny — czasem to wystarczy, czasem spotkanie trwa dłużej. Zawsze zostaje coś do przemyślenia.",
   },
   {
     step: "02",
     title: "Inwentaryzacja i koncepcja",
-    body: "Mierzymy mieszkanie, sprawdzamy stan instalacji i układ ścian. Powstają warianty układu funkcjonalnego i kierunek stylistyczny — do akceptacji.",
-    meta: "2–4 tygodnie",
+    body: "Mierzymy mieszkanie, sprawdzamy stan instalacji i układ ścian. Powstają warianty układu funkcjonalnego i kierunek stylistyczny — do Waszej akceptacji.",
   },
   {
     step: "03",
     title: "Projekt autorski",
-    body: "Rysunki, rzuty, przekroje, dobór materiałów, kolory i światło. Na tym etapie zespół podaje wycenę wykonawczą na konkretnych materiałach i robociznach.",
-    meta: "6–10 tygodni",
+    body: "Rysunki, rzuty, przekroje, dobór materiałów, kolory i światło. Na tym etapie podajemy wycenę wykonawczą opartą na konkretnych materiałach i robociznach.",
   },
   {
     step: "04",
     title: "Realizacja i nadzór",
-    body: "Wybór wykonawcy, harmonogram, cotygodniowe wizyty na budowie, rozstrzyganie kolizji w trakcie. Wszystko spięte w jeden proces.",
-    meta: "3–9 miesięcy",
+    body: "Wybór wykonawcy, harmonogram, cotygodniowe wizyty na budowie, rozstrzyganie kolizji w trakcie. Wszystko spięte w jeden proces, nad którym w pełni czuwamy.",
   },
   {
     step: "05",
     title: "Wyposażenie i przekazanie",
     body: "Zamawiamy meble, oświetlenie i dodatki, montujemy, sprzątamy. Oddajemy wnętrze gotowe do wejścia — z książką realizacji i listą dostawców.",
-    meta: "4–8 tygodni",
   },
 ] as const;
 
 export const principles = [
   {
     title: "Jasny budżet, jasne decyzje",
-    body: "Zanim powstanie pierwszy rysunek, mówimy wprost, ile kosztuje wykonanie i gdzie są miejsca, na których da się zaoszczędzić bez straty na efektcie.",
+    body: "Zanim powstanie pierwszy rysunek, mówimy wprost, ile kosztuje realizacja i wskazujemy miejsca, w których da się zaoszczędzić bez straty na ostatecznym efekcie.",
   },
   {
-    title: "Jeden projektant, cały projekt",
-    body: "Nie dzielimy zlecenia między kilka osób. Ten, kto z Tobą rozmawia, prowadzi projekt do końca i bierze za niego odpowiedzialność.",
+    title: "Jeden projekt, dwa spojrzenia.",
+    body: "Analizujemy każdą przestrzeń wspólnie, dając Ci to, co najlepsze z obu naszych specjalizacji. Żadnych głuchych telefonów i przypadkowych podwykonawców - rozmawiasz bezpośrednio z nami.",
   },
   {
-    title: "Materiały, które znoszą czas",
+    title: "Materiały - jakość, która nie przemija",
     body: "Dobieramy wykończenia pod realną eksploatację. Podłoga ma wytrzymać 20 lat, nie 20 zdjęć na Pinterest.",
   },
   {
@@ -116,22 +107,42 @@ export const cooperationTypes = [
   {
     title: "Inwestor prywatny",
     body: "Mieszkanie, dom, apartament. Najczęstszy scenariusz: zakup lub sprzedaż lokalu, potrzeba układu i charakteru.",
-    points: ["Projekt wnętrza", "Nadzór autorski", "Kompletacja", "Po wykonaniu"],
+    points: [
+      "Projekt wnętrza",
+      "Nadzór autorski",
+      "Kompletacja",
+      "Po wykonaniu",
+    ],
   },
   {
     title: "Inwestor deweloperski",
     body: "Apartamenty na sprzedaż, strefy wspólne, recepcje, modele. Współpraca w pakietach, terminowo i powtarzalnie.",
-    points: ["Standardy wykończenia", "Książka standardu", "Partnerskie wykonawstwo", "Terminowość"],
+    points: [
+      "Standardy wykończenia",
+      "Książka standardu",
+      "Partnerskie wykonawstwo",
+      "Terminowość",
+    ],
   },
   {
     title: "Firma i usługi",
     body: "Biuro, recepcja, strefa spotkań, showroom. Wnętrze, które pracuje razem z ludźmi, którzy w nim siedzą.",
-    points: ["Koncepcja", "Projekt wykonawczy", "Meble na wymiar", "Serwis po montażu"],
+    points: [
+      "Koncepcja",
+      "Projekt wykonawczy",
+      "Meble na wymiar",
+      "Serwis po montażu",
+    ],
   },
   {
     title: "Hotelarstwo i gastronomia",
     body: "Lobby, restauracje, apartamenty na wynajem. Standardy, które wytrzymają dużą rotację gości i sezonowość.",
-    points: ["Koncepcja i charakter", "Specyfikacja materiałowa", "Proces zakupowy", "Serwis wykonawczy"],
+    points: [
+      "Koncepcja i charakter",
+      "Specyfikacja materiałowa",
+      "Proces zakupowy",
+      "Serwis wykonawczy",
+    ],
   },
 ] as const;
 

@@ -25,7 +25,7 @@ export default function HomePage() {
           <div className="md:col-span-4 md:col-start-9">
             <Reveal delay={120}>
               <p className="text-muted leading-relaxed">
-                Od {site.founded} roku projektujemy wnętrza w Warszawie, Gdańsku
+                Projektujemy wnętrza w Warszawie, Gdańsku
                 i okolicach. Pracujemy z ludźmi, którym zależy na proporcjach,
                 świetle i spokoju — a nie na efektownych zdjęcia. Każdy projekt
                 prowadzimy od pierwszej rozmowy do momentu, w którym w nim

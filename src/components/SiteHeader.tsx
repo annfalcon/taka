@@ -29,7 +29,7 @@ export function SiteHeader() {
             {site.name}
           </span>
           <span className="hidden text-[0.62rem] tracking-[0.2em] text-muted uppercase sm:inline">
-            Pracownia architektoniczna
+            Pracownia architektury wnętrz
           </span>
         </Link>
 

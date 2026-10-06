@@ -16,13 +16,8 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="O nas"
-        title="Mała pracownia z dużą dbałością"
-        intro="Nasza kameralna pracownia to dla Ciebie brak pośredników i gwarancja, że zawsze rozmawiasz bezpośrednio z autorką swojego wnętrza. Dzięki temu od pierwszego szkicu aż po finał na budowie, Twój projekt pozostaje w jednych, w pełni zaangażowanych rękach."
-        meta={[
-          `Od ${site.founded} roku`,
-          `${site.city}, ${site.country}`,
-          "Duet",
-        ]}
+        title="Mała pracownia z wielką dbałością o szczegóły."
+        intro="Nasza kameralna pracownia to dla Ciebie brak pośredników i gwarancja, że zawsze rozmawiasz bezpośrednio z autorką swojego wnętrza. Dzięki temu od pierwszego szkicu aż po finał realizacji, Twój projekt pozostaje w jednych, w pełni zaangażowanych rękach. "
         image="https://images.unsplash.com/photo-1676538627353-03b8e1eff168?auto=format&fit=crop&q=75"
         imageAlt="Wnętrze z długim korytarzem, kafelkową podłogą i oknami"
       />
@@ -33,21 +28,21 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Zespół"
             title="Dwie osoby, wspólna wizja."
-            intro="Celowo działamy w mikroskali. Brak rozbudowanej struktury to nasz największy atut. To pewność, że od pierwszego szkicu aż po realizację rozmawiasz z autorem projektu, który ma czas na dopracowanie każdego detalu."
+            intro="Praca w duecie pozwala nam spojrzeć na każdy projekt z dwóch różnych perspektyw. Dzięki temu masz pewność, że żadne rozwiązanie nie jest przypadkowe, a najmniejszy detal nie umknie naszej uwadze."
           />
 
           <ul className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                name: "Marcin Wójcik",
-                role: "Założyciel, projektant",
-                bio: "14 lat praktyki. Prowadzi koncepcje i rozmowy z klientami. Uważa, że dobry układ mieszkania jest wart więcej niż najdroższy materiał.",
+                name: "Agnieszka",
+                role: "Architekt i Projektantka Wnętrz",
+                bio: "Odpowiada za koncepcję, funkcjonalność i nadzór autorski. W swojej pracy łączy architektoniczną dyscyplinę z otwartością na drugiego człowieka. Jej niezawodny sposób na dobry projekt? Zawsze pyta, z czym klient nie chce się rozstać, a czego w swoim wnętrzu po prostu nie zniesie.",
               },
               {
-                name: "Katarzyna Nowak",
-                role: "Projektantka wnętrz",
-                bio: "Odpowiada za kompletację, materiały i światło. Zawsze pyta, co klient ma w domu i czego nie chce — to najszybsza droga do dobrego projektu.",
-              },              
+                name: "Anna",
+                role: "Projektantka Detalu i Rysunków Wykonawczych",
+                bio: "Odpowiada za projekty wykonawcze, dobór materiałów i dopracowanie każdego detalu. Przekłada wielkie wizje na precyzyjne rysunki dla wykonawców, aby każda, nawet najśmielsza koncepcja, była w 100% możliwa do zrealizowania.",
+              },
             ].map((m, i) => (
               <Reveal
                 as="li"
@@ -94,40 +89,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Liczby + zdjęcie */}
-      <section className="py-20 md:py-28">
-        <div className="container-x">
-          <div className="grid items-center gap-14 md:grid-cols-12">
-            <Reveal className="md:col-span-6">
-              <div className="relative aspect-4/5 overflow-hidden bg-paper-2">
-                <Image
-                  src="https://images.unsplash.com/photo-1749209698823-8b5c2076396b?auto=format&fit=crop&q=75"
-                  alt="Szklana fasada i wewnętrzne schody z metalowym poręczem"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-            </Reveal>
-            <div className="md:col-span-5 md:col-start-8">
-              <SectionHeading
-                eyebrow="Skala"
-                title="Nie rośniemy przez przypadek"
-                intro="Przyjmujemy tyle projektów, ile możemy poprowadzić osobiście. Dziś to sześć osób i maksymalnie kilkanaście projektów rocznie — to granica, przy której nadzór na budowie wciąż jest realny."
-              />
-              <ul className="mt-10 grid grid-cols-2 gap-6">
-                {stats.map((s) => (
-                  <li key={s.label} className="border-line border-t pt-5">
-                    <p className="font-display text-3xl">{s.value}</p>
-                    <p className="text-muted mt-1 text-xs">{s.label}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      
       {/* Proces + zakres */}
       <section className="bg-ink py-20 text-paper md:py-28">
         <div className="container-x">
