@@ -27,19 +27,17 @@ export function Hero() {
             className="mt-6 text-[clamp(2.75rem,8vw,7rem)] leading-[0.95] text-paper animate-rise"
             style={{ animationDelay: "120ms" }}
           >
-            Wnętrza,
+            Tworzymy wnętrza,
             <br />
-            w których
+            które
             <br />
-            chce się mieszkać.
+            stają się domem.
           </h1>
           <p
             className="mt-8 max-w-xl text-base leading-relaxed text-paper/80 md:text-lg animate-rise"
             style={{ animationDelay: "260ms" }}
           >
-            Projektujemy mieszkania, domy, biura i wnętrza komercyjne —
-            kompleksowo, od pierwszej rozmowy do ostatniej książki
-            z wyposażeniem.
+           Jako zgrany duet projektantek kompleksowo urządzamy mieszkania, domy i biura. Łączymy twardą wiedzę techniczną z kobiecą intuicją i czułością na detal. Od pierwszej kreski po ostatni dodatek - jesteśmy zaangażowane w 100%, by stworzyć wnętrze, o którym marzysz.
           </p>
         </div>
 
