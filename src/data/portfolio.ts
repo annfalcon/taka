@@ -69,7 +69,7 @@ export const projects: Project[] = [
     title: "Apartament A1",
     category: "Mieszkania",
     summary:
-      "Pełen zakres realizacji mieszkania — od układu funkcjonalnego po wyposażenie poszczególnych pomieszczeń.",
+      "Pełen zakres realizacji mieszkania - od układu funkcjonalnego po wyposażenie poszczególnych pomieszczeń.",
     photo: salon,
     photos: [
       { image: salon, alt: "Salon w apartamencie A1", label: "Salon" },

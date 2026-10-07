@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fragment } from "react";
-import Image from "next/image";
+import pracownia from "@/assets/pics/pracownia.png";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -9,7 +9,7 @@ import { principles, site, stats } from "@/data/site";
 export const metadata: Metadata = {
   title: "O nas",
   description:
-    "Pracownia architektury wnętrz TAKA — zespół, podejście do projektu, zasady współpracy i historia firmy.",
+    "Pracownia architektury wnętrz TAKA - zespół, podejście do projektu, zasady współpracy i historia firmy.",
 };
 
 export default function AboutPage() {
@@ -19,8 +19,8 @@ export default function AboutPage() {
         eyebrow="O nas"
         title="Mała pracownia z wielką dbałością o szczegóły."
         intro="Nasza kameralna pracownia to dla Ciebie brak pośredników i gwarancja, że zawsze rozmawiasz bezpośrednio z autorką swojego wnętrza. Dzięki temu od pierwszego szkicu aż po finał realizacji, Twój projekt pozostaje w jednych, w pełni zaangażowanych rękach. "
-        image="https://images.unsplash.com/photo-1777923311883-c9c06e4d8aba?auto=format&fit=crop&q=75&w=2400"
-        imageAlt="Dwie projektantki wybierające próbki materiałów przy biurku w pracowni"
+        image={pracownia}
+        imageAlt="Wnętrze pracowni TAKA"
       />
       {/* Zespół */}
       <section className="py-5 md:py-10">

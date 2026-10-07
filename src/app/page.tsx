@@ -1,10 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PortfolioGallery } from "@/components/PortfolioGallery";
-import { process, reviews, services, site, stats } from "@/data/site";
+import { process, reviews, services, site } from "@/data/site";
 
 export default function HomePage() {
   return (

@@ -1,8 +1,13 @@
 import Image from "next/image";
 import { heroPoster } from "@/data/portfolio";
+import heroShot from "@/assets/pics/lobby3.jpg"; // Import the image from the assets folder
+
+// Import lobby2 image from assets 
+
+
 
 export function Hero() {
-  const poster = `https://images.unsplash.com/${heroPoster.photo}?auto=format&fit=crop&q=75`;
+  const poster = heroShot; // Use the imported image as the poster
 
   return (
     <section className="relative min-h-[92svh] overflow-hidden bg-ink-2">

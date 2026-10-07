@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import spokojnaDroga from "@/assets/pics/Spokojna droga.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -44,15 +45,15 @@ export default function CooperationPage() {
     <>
       <PageHero
         eyebrow="Współpraca"
-        title="Od pomysłu do kluczy"
-        intro="Nie mamy jednego cennika, bo każde wnętrze jest inne. Poniżej cztery najczęstsze scenariusze — w nawiasie orientacyjny koszt projektu. Dokładną wycenę podajemy po rozmowie."
+        title="Spokojna droga do wymarzonego wnętrza."
+        intro="Tworzenie nowego domu to czas na Twoje inspiracje, podczas gdy my bierzemy na siebie całą realizację. Zobacz, jak w pięciu czytelnych krokach zamieniamy Twoją wizję w dopracowaną przestrzeń, gotową do zamieszkania."
         points={process.map((p) => ({
           step: p.step,
           title: p.title,
           body: p.body,
         }))}
-        image="https://images.unsplash.com/photo-1723516908282-b3c795e9416a?auto=format&fit=crop&q=75"
-        imageAlt="Lobby hotelowe z holem schodowym"
+        image={spokojnaDroga}
+        imageAlt="Spokojna droga do wymarzonego wnętrza"
       />
 
       {/* FAQ */}
