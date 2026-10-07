@@ -1,11 +1,18 @@
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
 
+type HeroPoint = {
+  step?: string;
+  title: string;
+  body?: string;
+};
+
 type Props = {
   eyebrow: string;
   title: string;
   intro?: string;
   meta?: string[];
+  points?: HeroPoint[];
   image?: string | StaticImageData;
   imageAlt?: string;
 };
@@ -15,6 +22,7 @@ export function PageHero({
   title,
   intro,
   meta,
+  points,
   image,
   imageAlt,
 }: Props) {
@@ -38,6 +46,29 @@ export function PageHero({
           >
             {intro}
           </p>
+        ) : null}
+
+        {points?.length ? (
+          <ul
+            className="mt-14 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-5 animate-rise"
+            style={{ animationDelay: "300ms" }}
+          >
+            {points.map((pt, i) => (
+              <li key={pt.title} className="border-line border-t pt-5">
+                <span className="text-clay font-display text-sm tabular-nums">
+                  {pt.step ?? String(i + 1).padStart(2, "0")}
+                </span>
+                <h2 className="font-display mt-3 text-lg leading-snug">
+                  {pt.title}
+                </h2>
+                {pt.body ? (
+                  <p className="text-muted mt-3 text-sm leading-relaxed">
+                    {pt.body}
+                  </p>
+                ) : null}
+              </li>
+            ))}
+          </ul>
         ) : null}
 
         {meta?.length ? (

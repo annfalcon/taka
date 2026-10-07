@@ -40,7 +40,7 @@ export default function AboutPage() {
               {
                 name: "Anna",
                 role: "Projektantka Detalu i Rysunków Wykonawczych",
-                bio: "Absolwentka Energetyki na Wydziale Oceanotechniki i Okrętownictwa Politechniki Gdańskiej, z 13-letnim doświadczeniem w projektowaniu konstrukcyji. W pracowni odpowiada za niezawodność techniczną, ergonomię oraz koordynację skomplikowanych rozwiązań wykonawczych. Dzięki prowadzeniu autorskiej marki SimplaStudio.Art doskonale porusza się w świecie rzemiosła, technologii i projektowania unikalnych mebli. W pracy łączy inżynieryjny rygor z wrażliwością na człowieka, dbając, by wnętrza były bezpieczne, logiczne i idealnie skrojone na miarę życia ich użytkowników."
+                bio: "Absolwentka Energetyki na Wydziale Oceanotechniki i Okrętownictwa Politechniki Gdańskiej, z 13-letnim doświadczeniem w projektowaniu konstrukcji. W pracowni odpowiada za niezawodność techniczną, ergonomię oraz koordynację skomplikowanych rozwiązań wykonawczych. Dzięki prowadzeniu autorskiej marki SimplaStudio.Art doskonale porusza się w świecie rzemiosła, technologii i projektowania unikalnych mebli. W pracy łączy inżynieryjny rygor z wrażliwością na człowieka, dbając, by wnętrza były bezpieczne, logiczne i idealnie skrojone na miarę życia ich użytkowników."
               },
             ].map((m, i) => (
               <Reveal

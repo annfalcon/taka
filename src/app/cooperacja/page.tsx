@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { cooperationTypes, process, services } from "@/data/site";
+import { process } from "@/data/site";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -11,45 +11,6 @@ export const metadata: Metadata = {
   description:
     "Formy współpracy z pracownią TAKA: inwestor prywatny, deweloper, firma i usługi, hotelarstwo i gastronomia. Sprawdź model pracy, role i koszty.",
 };
-
-const engagement = [
-  {
-    title: "Etap projektu",
-    price: "od 90 zł / m²",
-    body: "Rabat przy metrażu powyżej 100 m² i przy zleceniu całej inwestycji wraz z nadzorem.",
-    items: [
-      "Inwentaryzacja i pomiary",
-      "Koncepcja — 2 warianty",
-      "Projekt autorski",
-      "Specyfikacja materiałowa",
-      "Wycena wykonawcza",
-    ],
-  },
-  {
-    title: "Nadzór autorski",
-    price: "6% wartości prac",
-    body: "Rozliczany od wartości zakończonych prac instalacyjnych i wykończeniowych.",
-    items: [
-      "Wizyty na budowie",
-      "Kontrola jakości i materiałów",
-      "Odbiór etapów",
-      "Rozstrzyganie kolizji",
-      "Dokumentacja powykonawcza",
-    ],
-  },
-  {
-    title: "Kompletacja i wyposażenie",
-    price: "wg zakresu",
-    body: "Meble na wymiar, oświetlenie, tkaniny, dodatki. Prowizja rozliczana osobno.",
-    items: [
-      "Specyfikacja zakupowa",
-      "Zamówienia u producentów",
-      "Koordynacja dostaw",
-      "Montaż",
-      "Książka realizacji",
-    ],
-  },
-];
 
 const faq = [
   {
@@ -85,139 +46,14 @@ export default function CooperationPage() {
         eyebrow="Współpraca"
         title="Od pomysłu do kluczy"
         intro="Nie mamy jednego cennika, bo każde wnętrze jest inne. Poniżej cztery najczęstsze scenariusze — w nawiasie orientacyjny koszt projektu. Dokładną wycenę podajemy po rozmowie."
+        points={process.map((p) => ({
+          step: p.step,
+          title: p.title,
+          body: p.body,
+        }))}
         image="https://images.unsplash.com/photo-1723516908282-b3c795e9416a?auto=format&fit=crop&q=75"
         imageAlt="Lobby hotelowe z holem schodowym"
       />
-
-      {/* Proces + zakres */}
-      <section className="bg-ink py-20 text-paper md:py-28">
-        <div className="container-x">
-          <SectionHeading
-            eyebrow="Proces i zakres"
-            title="Od pomysłu do kluczy"
-            tone="dark"
-          />
-          <div className="mt-16 grid gap-16 md:grid-cols-12">
-            <ol className="md:col-span-7">
-              {process.map((p, i) => (
-                <Reveal
-                  as="li"
-                  key={p.step}
-                  delay={i * 50}
-                  className="border-paper/15 flex gap-6 border-t py-7 first:border-t-0 first:pt-0"
-                >
-                  <span className="text-clay-soft font-display text-2xl tabular-nums">
-                    {p.step}
-                  </span>
-                  <div>
-                    <div className="flex flex-wrap items-baseline justify-between gap-3">
-                      <h3 className="font-display text-xl">{p.title}</h3>
-                    </div>
-                    <p className="text-paper/70 mt-3 leading-relaxed">
-                      {p.body}
-                    </p>
-                  </div>
-                </Reveal>
-              ))}
-            </ol>
-
-            <div className="md:col-span-4 md:col-start-9">
-              <p className="eyebrow text-paper/50">Zakres usług</p>
-              <ul className="mt-6 space-y-6">
-                {services.map((s) => (
-                  <li key={s.title} className="border-paper/15 border-t pt-5">
-                    <h4 className="font-display text-lg">{s.title}</h4>
-                    <p className="text-paper/60 mt-2 text-sm leading-relaxed">
-                      {s.body}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Modele współpracy */}
-      <section className="py-20 md:py-28">
-        <div className="container-x">
-          <ul className="grid gap-px bg-line md:grid-cols-2">
-            {cooperationTypes.map((t, i) => (
-              <Reveal
-                as="li"
-                key={t.title}
-                delay={i * 70}
-                className="group bg-paper p-8 transition-colors duration-500 hover:bg-white md:p-12"
-              >
-                <div className="flex items-baseline justify-between gap-4">
-                  <h2 className="text-2xl leading-tight md:text-3xl">
-                    {t.title}
-                  </h2>
-                  <span className="text-muted text-xs tabular-nums">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <p className="text-muted mt-4 leading-relaxed">{t.body}</p>
-                <ul className="border-line mt-7 space-y-2 border-t pt-5 text-sm">
-                  {t.points.map((p) => (
-                    <li key={p} className="flex items-center gap-3">
-                      <span className="bg-clay h-1 w-1 shrink-0 rounded-full" />
-                      {p}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Koszty */}
-      <section className="bg-paper-2 py-20 md:py-28">
-        <div className="container-x">
-          <SectionHeading
-            eyebrow="Koszty"
-            title="Ile to kosztuje"
-            intro="Orientacyjne stawki. Podajemy je przed zawarciem umowy i nie zmieniamy ich w trakcie projektu — chyba że zmienisz zakres prac."
-          />
-
-          <ul className="mt-16 grid gap-8 md:grid-cols-3">
-            {engagement.map((e, i) => (
-              <Reveal
-                as="li"
-                key={e.title}
-                delay={i * 80}
-                className="flex flex-col border-t border-ink/15 pt-8"
-              >
-                <h3 className="font-display text-2xl">{e.title}</h3>
-                <p className="font-display text-clay mt-4 text-3xl">
-                  {e.price}
-                </p>
-                <p className="text-muted mt-3 text-sm leading-relaxed">
-                  {e.body}
-                </p>
-                <ul className="mt-7 space-y-2.5 text-sm">
-                  {e.items.map((it) => (
-                    <li
-                      key={it}
-                      className="border-line flex gap-3 border-b pb-2.5"
-                    >
-                      <span className="bg-clay mt-2 h-1 w-1 shrink-0 rounded-full" />
-                      {it}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            ))}
-          </ul>
-
-          <p className="text-muted mt-12 max-w-3xl text-sm leading-relaxed">
-            Kwoty są orientacyjne i nie stanowią oferty w rozumieniu Kodeksu
-            cywilnego. Wycena indywidualna jest bezpłatna i wiążąca — wysyłamy
-            ją w formie PDF w ciągu 5 dni roboczych od pierwszego spotkania.
-          </p>
-        </div>
-      </section>
 
       {/* FAQ */}
       <section className="bg-ink py-20 text-paper md:py-28">
