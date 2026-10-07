@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { collaborators, cooperationTypes, process } from "@/data/site";
+import { cooperationTypes } from "@/data/site";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -168,56 +167,6 @@ export default function CooperationPage() {
             cywilnego. Wycena indywidualna jest bezpłatna i wiążąca — wysyłamy
             ją w formie PDF w ciągu 5 dni roboczych od pierwszego spotkania.
           </p>
-        </div>
-      </section>
-
-      {/* Role + proces */}
-      <section className="py-20 md:py-28">
-        <div className="container-x">
-          <div className="grid gap-16 md:grid-cols-12">
-            <div className="md:col-span-6">
-              <div className="relative mt-12 aspect-3/2 overflow-hidden bg-paper-2">
-                <Image
-                  src="https://images.unsplash.com/photo-1774021793376-6dc8fb472358?auto=format&fit=crop&q=75"
-                  alt="Betonowe schody z metalową balustradą"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            <div className="md:col-span-5 md:col-start-8">
-              <p className="eyebrow">Zespół projektowy</p>
-              <ul className="mt-6 grid grid-cols-2 gap-x-8 gap-y-6">
-                {collaborators.map((c) => (
-                  <li
-                    key={c}
-                    className="border-line flex gap-3 border-t pt-4 text-sm"
-                  >
-                    <span className="bg-clay mt-1.5 h-1 w-1 shrink-0 rounded-full" />
-                    {c}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-12">
-                <p className="eyebrow">Warto wiedzieć</p>
-                <ul className="mt-6 space-y-5">
-                  {process.slice(0, 3).map((p) => (
-                    <li key={p.step} className="flex gap-5">
-                      <span className="text-clay font-display text-lg tabular-nums">
-                        {p.step}
-                      </span>
-                      <div>
-                        <p className="text-sm">{p.title}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
