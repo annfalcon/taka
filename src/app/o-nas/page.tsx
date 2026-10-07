@@ -4,7 +4,7 @@ import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { principles, process, services, site, stats } from "@/data/site";
+import { principles, site, stats } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "O nas",
@@ -92,55 +92,6 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </ul>
-        </div>
-      </section>
-
-      {/* Proces + zakres */}
-      <section className="bg-ink py-20 text-paper md:py-28">
-        <div className="container-x">
-          <SectionHeading
-            eyebrow="Proces i zakres"
-            title="Od pomysłu do kluczy"
-            tone="dark"
-          />
-          <div className="mt-16 grid gap-16 md:grid-cols-12">
-            <ol className="md:col-span-7">
-              {process.map((p, i) => (
-                <Reveal
-                  as="li"
-                  key={p.step}
-                  delay={i * 50}
-                  className="border-paper/15 flex gap-6 border-t py-7 first:border-t-0 first:pt-0"
-                >
-                  <span className="text-clay-soft font-display text-2xl tabular-nums">
-                    {p.step}
-                  </span>
-                  <div>
-                    <div className="flex flex-wrap items-baseline justify-between gap-3">
-                      <h3 className="font-display text-xl">{p.title}</h3>
-                    </div>
-                    <p className="text-paper/70 mt-3 leading-relaxed">
-                      {p.body}
-                    </p>
-                  </div>
-                </Reveal>
-              ))}
-            </ol>
-
-            <div className="md:col-span-4 md:col-start-9">
-              <p className="eyebrow text-paper/50">Zakres usług</p>
-              <ul className="mt-6 space-y-6">
-                {services.map((s) => (
-                  <li key={s.title} className="border-paper/15 border-t pt-5">
-                    <h4 className="font-display text-lg">{s.title}</h4>
-                    <p className="text-paper/60 mt-2 text-sm leading-relaxed">
-                      {s.body}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
         </div>
       </section>
     </>
