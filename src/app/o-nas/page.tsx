@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -18,8 +19,8 @@ export default function AboutPage() {
         eyebrow="O nas"
         title="Mała pracownia z wielką dbałością o szczegóły."
         intro="Nasza kameralna pracownia to dla Ciebie brak pośredników i gwarancja, że zawsze rozmawiasz bezpośrednio z autorką swojego wnętrza. Dzięki temu od pierwszego szkicu aż po finał realizacji, Twój projekt pozostaje w jednych, w pełni zaangażowanych rękach. "
-        image="https://images.unsplash.com/photo-1744627049721-73c27008ad28?auto=format&fit=crop&q=75&w=2400"
-        imageAlt="Projektanci omawiający dokumentację projektową przed ekranem komputera"
+        image="https://images.unsplash.com/photo-1777923311883-c9c06e4d8aba?auto=format&fit=crop&q=75&w=2400"
+        imageAlt="Dwie projektantki wybierające próbki materiałów przy biurku w pracowni"
       />
       {/* Zespół */}
       <section className="py-5 md:py-10">
@@ -34,12 +35,12 @@ export default function AboutPage() {
               {
                 name: "Agnieszka",
                 role: "Architekt i Projektantka Wnętrz",
-                bio: "Odpowiada za koncepcję, funkcjonalność i nadzór autorski. W swojej pracy łączy architektoniczną dyscyplinę z otwartością na drugiego człowieka. Jej niezawodny sposób na dobry projekt? Zawsze pyta, z czym klient nie chce się rozstać, a czego w swoim wnętrzu po prostu nie zniesie.",
+                bio: "Absolwentka Architektury i Urbanistyki na Politechnice Warszawskiej, z 16-letnim doświadczeniem zawodowym w projektowaniu. W pracowni odpowiada za koncepcję, funkcjonalność przestrzeni oraz nadzór autorski nad realizacją projektów. W swojej pracy łączy wiedzę architektoniczną, wyczucie proporcji i dbałość o detal z uważnym podejściem do potrzeb użytkowników. Projektowanie traktuje jako proces, w którym estetyka zawsze idzie w parze z funkcjonalnością, a wnętrze powinno być naturalnym odzwierciedleniem stylu życia i osobowości jego mieszkańców.",
               },
               {
                 name: "Anna",
                 role: "Projektantka Detalu i Rysunków Wykonawczych",
-                bio: "Odpowiada za projekty wykonawcze, dobór materiałów i dopracowanie każdego detalu. Przekłada wielkie wizje na precyzyjne rysunki dla wykonawców, aby każda, nawet najśmielsza koncepcja, była w 100% możliwa do zrealizowania.",
+                bio: "Absolwentka Energetyki na Wydziale Oceanotechniki i Okrętownictwa Politechniki Gdańskiej, z 13-letnim doświadczeniem w projektowaniu konstrukcyji. W pracowni odpowiada za niezawodność techniczną, ergonomię oraz koordynację skomplikowanych rozwiązań wykonawczych. Dzięki prowadzeniu autorskiej marki SimplaStudio.Art doskonale porusza się w świecie rzemiosła, technologii i projektowania unikalnych mebli. W pracy łączy inżynieryjny rygor z wrażliwością na człowieka, dbając, by wnętrza były bezpieczne, logiczne i idealnie skrojone na miarę życia ich użytkowników."
               },
             ].map((m, i) => (
               <Reveal
@@ -51,7 +52,14 @@ export default function AboutPage() {
                 <h3 className="font-display text-2xl">{m.name}</h3>
                 <p className="text-clay mt-1.5 text-sm">{m.role}</p>
                 <p className="text-muted mt-4 text-sm leading-relaxed">
-                  {m.bio}
+                  {m.bio
+                    .split(/(?=W pracowni odpowiada za)/)
+                    .map((part, j) => (
+                      <Fragment key={j}>
+                        {j > 0 && <br />}
+                        {part}
+                      </Fragment>
+                    ))}
                 </p>
               </Reveal>
             ))}
