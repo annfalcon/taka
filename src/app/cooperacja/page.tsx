@@ -83,45 +83,11 @@ export default function CooperationPage() {
     <>
       <PageHero
         eyebrow="Współpraca"
-        title="Cztery modele współpracy"
+        title="Od pomysłu do kluczy"
         intro="Nie mamy jednego cennika, bo każde wnętrze jest inne. Poniżej cztery najczęstsze scenariusze — w nawiasie orientacyjny koszt projektu. Dokładną wycenę podajemy po rozmowie."
         image="https://images.unsplash.com/photo-1723516908282-b3c795e9416a?auto=format&fit=crop&q=75"
         imageAlt="Lobby hotelowe z holem schodowym"
       />
-
-      {/* Modele współpracy */}
-      <section className="pb-20 md:pb-28">
-        <div className="container-x">
-          <ul className="grid gap-px bg-line md:grid-cols-2">
-            {cooperationTypes.map((t, i) => (
-              <Reveal
-                as="li"
-                key={t.title}
-                delay={i * 70}
-                className="group bg-paper p-8 transition-colors duration-500 hover:bg-white md:p-12"
-              >
-                <div className="flex items-baseline justify-between gap-4">
-                  <h2 className="text-2xl leading-tight md:text-3xl">
-                    {t.title}
-                  </h2>
-                  <span className="text-muted text-xs tabular-nums">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <p className="text-muted mt-4 leading-relaxed">{t.body}</p>
-                <ul className="border-line mt-7 space-y-2 border-t pt-5 text-sm">
-                  {t.points.map((p) => (
-                    <li key={p} className="flex items-center gap-3">
-                      <span className="bg-clay h-1 w-1 shrink-0 rounded-full" />
-                      {p}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            ))}
-          </ul>
-        </div>
-      </section>
 
       {/* Proces + zakres */}
       <section className="bg-ink py-20 text-paper md:py-28">
@@ -169,6 +135,40 @@ export default function CooperationPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Modele współpracy */}
+      <section className="py-20 md:py-28">
+        <div className="container-x">
+          <ul className="grid gap-px bg-line md:grid-cols-2">
+            {cooperationTypes.map((t, i) => (
+              <Reveal
+                as="li"
+                key={t.title}
+                delay={i * 70}
+                className="group bg-paper p-8 transition-colors duration-500 hover:bg-white md:p-12"
+              >
+                <div className="flex items-baseline justify-between gap-4">
+                  <h2 className="text-2xl leading-tight md:text-3xl">
+                    {t.title}
+                  </h2>
+                  <span className="text-muted text-xs tabular-nums">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <p className="text-muted mt-4 leading-relaxed">{t.body}</p>
+                <ul className="border-line mt-7 space-y-2 border-t pt-5 text-sm">
+                  {t.points.map((p) => (
+                    <li key={p} className="flex items-center gap-3">
+                      <span className="bg-clay h-1 w-1 shrink-0 rounded-full" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            ))}
+          </ul>
         </div>
       </section>
 
