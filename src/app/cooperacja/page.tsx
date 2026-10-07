@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import spokojnaDroga from "@/assets/pics/Spokojna droga.jpg";
+import spokojnaDroga from "@/assets/pics/spokojna_droga.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
