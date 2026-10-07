@@ -30,7 +30,7 @@ export const site = {
 export const nav = [
   { label: "O nas", href: "/o-nas" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Współpraca", href: "/cooperacja" },
+  { label: "Oferta", href: "/cooperacja" },
   { label: "Nasze produkty", href: "/produkty" },
   { label: "Kontakt", href: "/kontakt" },
 ] as const;
