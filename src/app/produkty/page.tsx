@@ -68,11 +68,7 @@ export default function ProductsPage() {
           <Reveal delay={120} className="mt-16">
             <p className="text-muted max-w-2xl text-sm leading-relaxed">
               Interesuje Cię któryś z tych produktów albo masz pomysł na
-              następny? Napisz —{" "}
-              <a href="/kontakt" className="text-ink underline underline-offset-4">
-                formularz kontaktowy
-              </a>{" "}
-              albo mail bezpośrednio.
+              następny? Napisz do nas bezpośrednio.
             </p>
           </Reveal>
         </div>

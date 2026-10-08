@@ -15,13 +15,6 @@ export function SiteFooter() {
               <br />
               o swoim wnętrzu.
             </h2>
-            <Link
-              href="/kontakt"
-              className="mt-9 inline-flex items-center gap-3 rounded-full bg-paper px-7 py-4 text-sm text-ink transition-colors hover:bg-clay hover:text-paper"
-            >
-              Formularz kontaktowy
-              <span aria-hidden>→</span>
-            </Link>
           </div>
 
           <div className="grid gap-10 sm:grid-cols-2 md:col-span-7 md:grid-cols-3">

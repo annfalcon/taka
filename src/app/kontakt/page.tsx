@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
-import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Kontakt",
-  description: `Skontaktuj się z pracownią architektury wnętrz TAKA w ${site.city}. Telefon, e-mail, adres i formularz zapytania o projekt.`,
+  description: `Skontaktuj się z pracownią architektury wnętrz TAKA w ${site.city}. Telefon, e-mail i adres.`,
 };
 
 const rows = [
@@ -32,15 +31,8 @@ export default function ContactPage() {
       <section className="pb-24 md:pb-32">
         <div className="container-x">
           <div className="grid gap-16 md:grid-cols-12">
-            {/* Formularz */}
-            <div className="md:col-span-7">
-              <Reveal>
-                <ContactForm />
-              </Reveal>
-            </div>
-
             {/* Dane */}
-            <aside className="md:col-span-4 md:col-start-9">
+            <aside className="md:col-span-6 md:col-start-4">
               <Reveal delay={120}>
                 <p className="eyebrow">Dane kontaktowe</p>
                 <dl className="mt-6">
@@ -120,51 +112,6 @@ export default function ContactPage() {
         <p className="pointer-events-none absolute bottom-4 left-4 rounded-full bg-paper px-4 py-2 text-xs">
           Mapa poglądowa — podmień na własną (np. Google Maps embed)
         </p>
-      </section>
-
-      {/* Klauzula */}
-      <section id="klauzula" className="bg-paper-2 py-16 md:py-20">
-        <div className="container-x">
-          <div className="grid gap-10 md:grid-cols-12">
-            <div className="md:col-span-4">
-              <p className="eyebrow">Dane osobowe</p>
-              <h2 className="mt-4 text-2xl leading-tight">Klauzula informacyjna</h2>
-            </div>
-            <div className="text-muted space-y-4 text-sm leading-relaxed md:col-span-8">
-              <p>
-                Administratorem danych osobowych przesyłanych przez formularz
-                jest {site.fullName}, {site.address.street}, {site.address.postal}{" "}
-                {site.address.city}, NIP {site.nip}.
-              </p>
-              <p>
-                Dane przetwarzamy wyłącznie w celu przygotowania odpowiedzi na
-                zapytanie i prowadzenia korespondencji związanej z projektem.
-                Podstawa prawna: art. 6 ust. 1 lit. b RODO (działania przed
-                zawarciem umowy) oraz art. 6 ust. 1 lit. a (dobrowolnie
-                wyrażona zgoda).
-              </p>
-              <p>
-                Dane przechowujemy przez okres prowadzenia korespondencji i
-                przez maksymalnie 5 lat po jej zakończeniu, a w zakresie
-                dokumentacji projektowej — przez okres wynikający z przepisów
-                prawa budowlanego. Dane nie są przekazywane poza obszar UE bez
-                stosowania odpowiednich zabezpieczeń.
-              </p>
-              <p>
-                Masz prawo dostępu do swoich danych, ich sprostowania,
-                usunięcia, ograniczenia przetwarzania oraz wniesienia sprzeciwu,
-                a także prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych
-                Osobowych. Wycofanie zgody jest możliwe w dowolnym momencie,
-                bez wpływu na zgodność z prawem przetwarzania sprzed jej
-                cofnięcia.
-              </p>
-              <p className="text-xs">
-                Uzupełnij brakujące dane administratora, okresy retencji i
-                wpis organu nadzorczego przed publikacją strony.
-              </p>
-            </div>
-          </div>
-        </div>
       </section>
     </>
   );

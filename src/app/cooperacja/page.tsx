@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import heroImage from "@/assets/pics/hero.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -97,12 +96,6 @@ export default function CooperationPage() {
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <Link
-                href="/kontakt"
-                className="bg-ink text-paper hover:bg-clay rounded-full px-8 py-4 text-center text-sm transition-colors"
-              >
-                Formularz kontaktowy
-              </Link>
               <a
                 href={`tel:${site.phoneHref}`}
                 className="border-line hover:border-ink rounded-full border px-8 py-4 text-center text-sm transition-colors"
