@@ -4,7 +4,7 @@ import pracownia from "@/assets/pics/pracownia.png";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { principles, site, stats } from "@/data/site";
+import { principles } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "O nas",
