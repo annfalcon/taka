@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import heroImage from "@/assets/pics/spokojna_droga.jpg";
+import heroImage from "@/assets/pics/hero.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
