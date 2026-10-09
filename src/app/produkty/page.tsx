@@ -35,22 +35,22 @@ export default function ProductsPage() {
           <SectionHeading
             eyebrow="Dlaczego własne"
             title="Bo w projekcie zawsze brakuje jednej rzeczy"
-            intro="Pracując nad wnętrzami, ciągle słyszymy to samo: „szkoda, tylko że tej lampy nie ma normalnie”. Postanowiliśmy zrobić te rzeczy sami."
+            intro="Projektując wnętrza, ciągle słyszeliśmy to samo: „Szkoda, że tego stolika nie można nigdzie kupić”. W końcu postanowiliśmy wziąć sprawy w swoje ręce i stworzyć go sami."
           />
 
           <ul className="mt-16 grid gap-x-10 gap-y-12 md:grid-cols-3">
             {[
               {
                 title: "Projektowane pod wnętrze",
-                body: "Każdy produkt powstaje przy okazji konkretnego projektu. Wiemy, jak się zachowuje przy określonym świetle i na tle konkretnej ściany — bo sami to zainstalowaliśmy.",
+                body: "Tworzymy produkty z myślą o konkretnych wnętrzach i sami je montujemy, dlatego doskonale wiemy, jak zachowają się w docelowym świetle i przestrzeni.",
               },
               {
                 title: "Małe serie",
-                body: "Robimy pojedyncze sztuki i krótkie serie. Nie utrzymujemy magazynu, więc nie zostaniemy z pięćset lamp, których nikt nie chce.",
+                body: "Tworzymy meble i dodatki, których nie znajdziesz nigdzie indziej. Tylko pojedyncze sztuki i limitowane serie - realizowane od początku do końca na Twoje indywidualne zamówienie.",
               },
               {
-                title: "Poprawki po Twojej stronie",
-                body: "Jak coś nie pasuje — przyjeżdżamy. Albo odbieramy i przerabiamy. Przy małej skali to jest realne, przy dużej już nie.",
+                title: "Poprawki po naszej stronie",
+                body: "Kameralna skala produkcji pozwala nam na pełną elastyczność, dlatego jeśli cokolwiek wymaga korekty, przyjeżdżamy na miejsce lub zabieramy produkt do naszej pracowni na poprawki.",
               },
             ].map((c, i) => (
               <Reveal
