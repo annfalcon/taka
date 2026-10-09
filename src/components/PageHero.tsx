@@ -30,7 +30,7 @@ export function PageHero({
     image && typeof image !== "string" ? `${image.width} / ${image.height}` : null;
 
   return (
-    <section className="pt-32 pb-14 md:pt-44 md:pb-20">
+    <section className="pt-32 pb-14 md:pt-30 md:pb-20">
       <div className="container-x">
         <p className="eyebrow animate-rise">{eyebrow}</p>
         <h1

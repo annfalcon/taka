@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import logo from "@/assets/logo/logoT.svg";
 import { nav, site } from "@/data/site";
 
 export function SiteHeader() {
@@ -24,11 +26,10 @@ export function SiteHeader() {
       className="bg-paper/85 fixed inset-x-0 top-0 z-50 backdrop-blur-sm"
     >
       <div className="container-x flex h-18 items-center justify-between gap-6">
-        <Link href="/" className="group flex items-baseline gap-2.5">
-          <span className="font-display text-2xl leading-none tracking-tight">
-            {site.name}
-          </span>
-          <span className="hidden text-[0.62rem] tracking-[0.2em] text-muted uppercase sm:inline">
+        <Link href="/" className="group flex items-center gap-2.5">
+          <Image src={logo} alt={site.name} priority className="h-20
+           w-auto" />
+          <span className="hidden text-[0.9rem] tracking-[0.2em] text-muted uppercase sm:inline">
             Pracownia architektury wnętrz
           </span>
         </Link>
