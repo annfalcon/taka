@@ -40,7 +40,7 @@ export default function AboutPage() {
               {
                 name: "Anna",
                 role: "Projektantka Detalu i Rysunków Wykonawczych",
-                bio: "Absolwentka Energetyki na Wydziale Oceanotechniki i Okrętownictwa Politechniki Gdańskiej, z 13-letnim doświadczeniem w projektowaniu konstrukcji. W pracowni odpowiada za niezawodność techniczną, ergonomię oraz koordynację skomplikowanych rozwiązań wykonawczych. Dzięki prowadzeniu autorskiej marki SimplaStudio.Art doskonale porusza się w świecie rzemiosła, technologii i projektowania unikalnych mebli. W pracy łączy inżynieryjny rygor z wrażliwością na człowieka, dbając, by wnętrza były bezpieczne, logiczne i idealnie skrojone na miarę życia ich użytkowników."
+                bio: "Absolwentka Energetyki na Wydziale Oceanotechniki i Okrętownictwa Politechniki Gdańskiej, z 13-letnim doświadczeniem w projektowaniu konstrukcji. W pracowni czuwa nad techniczną stroną projektów, ergonomią oraz płynną realizacją odważnych wizji. Inżynierską precyzję z radością łączy z zamiłowaniem do rzemiosła i tworzenia unikalnych mebli. Dba o to, by każda przestrzeń była nie tylko piękna, ale przede wszystkim przyjazna, mądrze przemyślana i bezpieczna, dając domownikom poczucie pełnego spokoju na co dzień."
               },
             ].map((m, i) => (
               <Reveal
@@ -53,7 +53,7 @@ export default function AboutPage() {
                 <p className="text-clay mt-1.5 text-sm">{m.role}</p>
                 <p className="text-muted mt-4 text-sm leading-relaxed">
                   {m.bio
-                    .split(/(?=W pracowni odpowiada za)/)
+                    .split(/(?=W pracowni )/)
                     .map((part, j) => (
                       <Fragment key={j}>
                         {j > 0 && <br />}

@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 const rows = [
   { label: "Telefon", value: site.phone, href: `tel:${site.phoneHref}` },
   { label: "E-mail", value: site.email, href: `mailto:${site.email}` },
-  { label: "Godziny", value: site.hours },
 ];
 
 export default function ContactPage() {
@@ -25,26 +24,24 @@ export default function ContactPage() {
         eyebrow="Kontakt"
         title="Napisz do nas"
         intro="Opisz wnętrze w kilku zdaniach — metraż, układ, budżet, termin. Odpowiadamy w ciągu jednego dnia roboczego, a wycenę wysyłamy w pięć dni roboczych."
-        meta={[site.hours, "Odpowiedź do 24 h", "Wycena w 5 dni"]}
       />
 
       <section className="pb-24 md:pb-32">
         <div className="container-x">
-          <div className="grid gap-16 md:grid-cols-12">
+          <div className="flex flex-col gap-16 md:flex-row">
             {/* Dane */}
             <aside className="md:col-span-6 md:col-start-4">
               <Reveal delay={120}>
                 <p className="eyebrow">Dane kontaktowe</p>
                 <dl className="mt-6">
                   {rows.map((r) => (
-                    <div
-                      key={r.label}
-                      className="border-line flex flex-col gap-1 border-b py-4"
-                    >
-                      <dt className="text-muted text-xs">{r.label}</dt>
+                    <div key={r.label} className="border-line flex flex-col ">
                       <dd className="text-lg">
                         {r.href ? (
-                          <a href={r.href} className="hover:text-clay transition-colors">
+                          <a
+                            href={r.href}
+                            className="hover:text-clay transition-colors"
+                          >
                             {r.value}
                           </a>
                         ) : (
@@ -54,54 +51,48 @@ export default function ContactPage() {
                     </div>
                   ))}
                 </dl>
-
-                <div className="border-line mt-10 border-b pb-4">
-                  <dt className="text-muted text-xs">Adres</dt>
-                  <dd className="mt-2 leading-relaxed">
-                    {site.fullName}
-                    <br />
-                    {site.address.street}
-                    <br />
-                    {site.address.postal} {site.address.city}
-                    <br />
-                    <span className="text-muted text-sm">NIP {site.nip}</span>
-                  </dd>
-                </div>
-
-                <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
-                  {site.social.map((s) => (
-                    <li key={s.label}>
-                      <a
-                        href={s.href}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        className="text-muted hover:text-ink inline-flex items-center gap-1.5 text-sm transition-colors"
-                      >
-                        {s.label}
-                        <span className="text-[0.6rem] opacity-50" aria-hidden>
-                          ↗
-                        </span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="border-line hover:border-ink mt-10 block rounded-full border px-6 py-3.5 text-center text-sm transition-colors"
-                >
-                  Wyznacz trasę
-                </a>
               </Reveal>
             </aside>
+            <aside className="md:col-span-6 md:col-start-4">
+              <div className="">
+                <dt className="eyebrow">Adres</dt>
+                <dd className="mt-6 leading-relaxed">
+                  {site.fullName}
+                  <br />
+                  {site.address.street}
+                  <br />
+                  {site.address.postal} {site.address.city}
+                </dd>
+              </div>
+            </aside>
+          </div>
+          <div>
+            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+              {site.social.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="text-muted hover:text-ink inline-flex items-center gap-1.5 text-sm transition-colors"
+                  >
+                    {s.label}
+                    <span className="text-[0.6rem] opacity-50" aria-hidden>
+                      ↗
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
       {/* Mapa */}
-      <section aria-label="Mapa dojazdu" className="relative h-80 bg-paper-2 md:h-[26rem]">
+      <section
+        aria-label="Mapa dojazdu"
+        className="relative h-80 bg-paper-2 md:h-[26rem]"
+      >
         <iframe
           title="Mapa — lokalizacja pracowni"
           src="https://www.openstreetmap.org/export/embed.html?bbox=18.5360%2C54.3988%2C18.5760%2C54.4188&layer=mapnik&marker=54.4088%2C18.5560"

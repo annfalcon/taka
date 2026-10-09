@@ -57,7 +57,6 @@ export function SiteFooter() {
                   <br />
                   {site.address.postal} {site.address.city}
                 </li>
-                <li className="text-paper/50">{site.hours}</li>
               </ul>
             </div>
 

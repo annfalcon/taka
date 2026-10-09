@@ -190,23 +190,7 @@ export default function HomePage() {
       <section className="bg-paper-2 py-20 md:py-28">
         <div className="container-x">
           <SectionHeading eyebrow="Opinie" title="Co mówią klienci" />
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
-            {reviews.map((r, i) => (
-              <Reveal
-                key={r.author}
-                delay={i * 80}
-                className="flex h-full flex-col justify-between border-t border-ink/15 pt-8"
-              >
-                <blockquote className="font-display text-xl leading-[1.4] md:text-2xl">
-                  „{r.quote}”
-                </blockquote>
-                <footer className="text-muted mt-8 text-sm">
-                  <span className="text-ink block">{r.author}</span>
-                  {r.role}
-                </footer>
-              </Reveal>
-            ))}
-          </div>
+          
         </div>
       </section>
     </>

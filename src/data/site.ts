@@ -6,7 +6,7 @@ export const site = {
     "Wnętrza, w których chce się mieszkać. Projektujemy od pierwszej rozmowy do ostatniej książki z wyposażeniem.",
   description:
     "TAKA to pracownia architektury wnętrz realizująca mieszkania, domy, biura i wnętrza komercyjne. Kompleksowo: koncepcja, projekt, nadzór nad wykonaniem.",
-  founded: "2014",
+  founded: "",
   city: "Gdańsk Oliwa",
   country: "Polska",
   email: "kontakt@takadesign.studio",
@@ -17,13 +17,12 @@ export const site = {
     postal: "80-322",
     city: "Gdańsk Oliwa",
   },
-  hours: "pon.–pt. 9:00–18:00",
-  nip: "000 00 00 000",
+
   social: [
     { label: "Instagram", href: "https://instagram.com" },
-    { label: "Facebook", href: "https://facebook.com" },
-    { label: "Pinterest", href: "https://pinterest.com" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
+    //{ label: "Facebook", href: "https://facebook.com" },
+    //{ label: "Pinterest", href: "https://pinterest.com" },
+    //{ label: "LinkedIn", href: "https://linkedin.com" },
   ],
 } as const;
 
@@ -111,16 +110,6 @@ export const cooperationTypes = [
     ],
   },
   {
-    title: "Inwestor deweloperski",
-    body: "Apartamenty na sprzedaż, strefy wspólne, recepcje, modele. Współpraca w pakietach, terminowo i powtarzalnie.",
-    points: [
-      "Standardy wykończenia",
-      "Książka standardu",
-      "Partnerskie wykonawstwo",
-      "Terminowość",
-    ],
-  },
-  {
     title: "Firma i usługi",
     body: "Biuro, recepcja, strefa spotkań, showroom. Wnętrze, które pracuje razem z ludźmi, którzy w nim siedzą.",
     points: [
@@ -154,22 +143,5 @@ export const collaborators = [
 ] as const;
 
 export const reviews = [
-  {
-    quote:
-      "Mieliśmy wąski budżet i 38 m² do zorganizowania w szybkim tempie. Projekt dostaliśmy w cztery tygodnie, a ekipa montażowa nie potrzebowała ani jednej dodatkowej wizyty. Do dziś nie ma w tym mieszkaniu nic, czego by żałaliśmy.",
-    author: "A. i M. Kowalczykowie",
-    role: "Mieszkanie 38 m², Praga",
-  },
-  {
-    quote:
-      "Najbardziej doceniam jedną rzecz: nikt nie próbował nas sprzedawać. Dostaliśmy trzy warianty, uczciwe koszty i informację, że to rozwiązanie będzie droższe o 18 tysięcy — z wyjaśnieniem dlaczego.",
-    author: "Anna Lewandowska",
-    role: "Dom jednorodzinny, Podkowa Leśna",
-  },
-  {
-    quote:
-      "Zlecaliśmy 24 apartamenty w jednym pakiecie. TAKA poprowadziła to jak zespół projektowy, nie jak wykonawca z rysunkami. Dzięki standardowi wykończenia mamy teraz powtarzalny produkt do kolejnych etapów.",
-    author: "Piotr Zawadzki",
-    role: "Deweloper, 24 apartamenty",
-  },
+ 
 ] as const;

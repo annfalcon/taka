@@ -106,7 +106,7 @@ export function SiteHeader() {
             href={`tel:${site.phoneHref}`}
             className="text-muted mt-6 text-sm"
           >
-            {site.phone} · {site.hours}
+            {site.phone}
           </a>
         </nav>
       </div>
