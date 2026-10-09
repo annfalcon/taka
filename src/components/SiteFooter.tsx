@@ -12,8 +12,7 @@ export function SiteFooter() {
             <p className="eyebrow text-paper/50">Zacznijmy rozmowę</p>
             <h2 className="mt-5 text-4xl leading-[1.05] md:text-5xl">
               Opowiedz
-              <br />
-              o swoim wnętrzu.
+              <br />o swoim wnętrzu.
             </h2>
           </div>
 
@@ -83,34 +82,6 @@ export function SiteFooter() {
               </ul>
             </div>
           </div>
-        </div>
-
-        <div className="border-paper/15 mt-16 flex flex-col gap-4 border-t pt-8 text-xs text-paper/45 md:flex-row md:items-center md:justify-between">
-          <p>
-            © {year} {site.fullName}. NIP {site.nip}
-          </p>
-          <p className="max-w-xl leading-relaxed">
-            Materiały zdjęciowe:{" "}
-            <a
-              href="https://unsplash.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="underline hover:text-paper"
-            >
-              Unsplash
-            </a>{" "}
-            oraz{" "}
-            <a
-              href="https://www.pexels.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="underline hover:text-paper"
-            >
-              Pexels
-            </a>{" "}
-            — na licencjach zezwalających na użycie komercyjne. Materiały
-            poglądowe — zastąp je realizacjami własnymi.
-          </p>
         </div>
       </div>
     </footer>
