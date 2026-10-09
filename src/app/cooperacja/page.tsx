@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: "Ile kosztuje projekt wnętrza?",
-    a: "U nas wyceniamy projekt od metrażu, a nie „za godzinę” — dzięki temu koszt znany jest z góry. Dla mieszkania 50–70 m² to zwykle 6 000–11 000 zł. Dokładną kwotę podajemy po pierwszej rozmowie, kiedy znamy układ i zakres.",
+    a: "Każde wnętrze to inna historia i unikalne wymagania, dlatego każdą współpracę wyceniamy indywidualnie. Dążymy do pełnej przejrzystości - ostateczną kwotę przedstawiamy po wstępnej konsultacji, gdy omówimy szczegóły i zakres projektu.",
   },
   {
     q: "Czy pracujecie na materiałach klienta?",
@@ -23,19 +23,19 @@ const faq = [
   },
   {
     q: "Kiedy płaci się poszczególne etapy?",
-    a: "Standardowo: 30% po koncepcji, 40% po projektzie autorskim, 30% po przekazaniu dokumentacji wykonawczej. Przy nadzorze autorskim rozliczamy etapami zgodnie z harmonogramem budowy.",
+    // a: "Standardowo: 30% po koncepcji, 40% po projektzie autorskim, 30% po przekazaniu dokumentacji wykonawczej. Przy nadzorze autorskim rozliczamy etapami zgodnie z harmonogramem budowy.",
   },
   {
     q: "Czy wykonujecie remont sami?",
-    a: "Nie. Jesteśmy pracownią projektową — dobieramy wykonawców, przygotowujemy dla nich dokumentację i nadzorujemy jakość. Wykonawcę wybierasz wspólnie, z naszym rekomendowaniem i porównaniem ofert.",
+    a: "Nie. Jesteśmy pracownią projektową- Przygotowujemy dokumentację techniczną. Na życzenie klientow dobieramy wykonawców i nadzorujemy jakość.",
   },
   {
     q: "Ile trwa projekt mieszkania?",
-    a: "Koncepcja zajmuje 2–4 tygodnie, projekt autorski 6–10 tygodni. Sama realizacja — od 3 do 9 miesięcy, zależnie od zakresu i dostępności materiałów.",
+    // a: "Koncepcja zajmuje 2–4 tygodnie, projekt autorski 6–10 tygodni. Sama realizacja — od 3 do 9 miesięcy, zależnie od zakresu i dostępności materiałów.",
   },
   {
     q: "Czy pracujecie poza Gdańskiem?",
-    a: "Tak, w granicach całego kraju. Spotkania i nadzór odbywają się na miejscu, a dokumentację przekazujemy w formie elektronicznej. Dla projektów poza regionem dojeżdżamy na kluczowe etapy.",
+    a: "Spotkania odbywają się online lub gdy jest taka konieczność również na miejscu.",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function CooperationPage() {
           <SectionHeading
             eyebrow="Pytania"
             title="Najczęstsze pytania"
-            intro="Jeśli Twojego tu nie ma — napisz albo zadzwoń. Odpowiadamy bez formułek."
+            intro="Twojego tematu nie ma na liście? Napisz do nas lub zadzwoń. Zawsze odpowiadamy konkretnie i bez szablonowych formułek."
             tone="dark"
           />
           <dl className="mt-16 grid gap-x-16 gap-y-12 md:grid-cols-2">
@@ -91,8 +91,7 @@ export default function CooperationPage() {
                 Pierwsza rozmowa jest bezpłatna
               </h2>
               <p className="text-muted mt-5 max-w-lg leading-relaxed">
-                Wystarczy telefon lub 20 minut na spotkaniu. Opowiedz, co
-                planujesz — powiemy, czy i jak możemy pomóc.
+                Krótka rozmowa lub 20-minutowe konsultacje wystarczą, abyśmy poznali Twoje potrzeby. Opowiedz o swoim projekcie, a my przedstawimy konkretne możliwości wsparcia.
               </p>
             </div>
             <div className="flex flex-col gap-3">
