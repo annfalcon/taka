@@ -69,7 +69,7 @@ export default function HomePage() {
             title="Co robimy"
             intro="Od układu funkcjonalnego po kompleksowy projekt wykonawczy ze specyfikacją materiałową lub realizacja wybranego etapu inwestycji."
           />
-          <ul className="mt-16 grid gap-px bg-line sm:grid-cols-2">
+          <ul className="flex flex-col sm:flex-row mt-16 gap-px bg-line">
             {services.map((s, i) => (
               <Reveal
                 as="li"
