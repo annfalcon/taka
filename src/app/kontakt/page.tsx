@@ -22,7 +22,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Kontakt"
         title="Napisz do nas"
-        intro="Opisz wnętrze w kilku zdaniach — metraż, układ, budżet, termin. Odpowiadamy w ciągu jednego dnia roboczego, a wycenę wysyłamy w pięć dni roboczych."
+        intro="Opisz wnętrze w kilku zdaniach - metraż, układ, budżet, termin. Odpowiadamy w ciągu jednego dnia roboczego, a wycenę wysyłamy w pięć dni roboczych."
       />
 
       <section className="pb-24 md:pb-32">

@@ -21,18 +21,18 @@ const faq = [
     q: "Czy pracujecie na materiałach klienta?",
     a: "Tak. Projekt jest nasz, ale materiały dobieramy wspólnie — często proponujemy dwa warianty cenowe tego samego rozwiązania. Jeśli macie już kupione meble lub wyposażenie, wkomponujemy je w projekt.",
   },
-  {
-    q: "Kiedy płaci się poszczególne etapy?",
+  //{
+    //q: "Kiedy płaci się poszczególne etapy?",
     // a: "Standardowo: 30% po koncepcji, 40% po projektzie autorskim, 30% po przekazaniu dokumentacji wykonawczej. Przy nadzorze autorskim rozliczamy etapami zgodnie z harmonogramem budowy.",
-  },
+  //},
   {
     q: "Czy wykonujecie remont sami?",
     a: "Nie. Jesteśmy pracownią projektową- Przygotowujemy dokumentację techniczną. Na życzenie klientow dobieramy wykonawców i nadzorujemy jakość.",
   },
-  {
-    q: "Ile trwa projekt mieszkania?",
+  //{
+    //q: "Ile trwa projekt mieszkania?",
     // a: "Koncepcja zajmuje 2–4 tygodnie, projekt autorski 6–10 tygodni. Sama realizacja — od 3 do 9 miesięcy, zależnie od zakresu i dostępności materiałów.",
-  },
+  //},
   {
     q: "Czy pracujecie poza Gdańskiem?",
     a: "Spotkania odbywają się online lub gdy jest taka konieczność również na miejscu.",

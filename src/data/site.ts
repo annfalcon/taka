@@ -13,7 +13,7 @@ export const site = {
   //phone: "",
   //phoneHref: "",
   address: {
-    street: "Pracownia projektowa online. Tworzymy wnętrza dla klientów z całego świata.",
+    street: "Pracownia projektowa online. Projektujemy wnętrza dla każdego i bez barier lokalizacyjnych.",
     postal: "",
     city: "Gdańsk Oliwa",
   },
