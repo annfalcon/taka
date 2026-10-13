@@ -97,7 +97,7 @@ export const products: Product[] = [
 
 /** Zdanie wprowadzające na stronie. */
 export const productsIntro =
-  "Poza projektowaniem wnętrz robimy też meble i lampy. Nie wszystko od razu, nie na skalę - ale to, co wychodzi z pracowni, wychodzi po naszej stronie.";
+  "Tworzymy nie tylko wnętrza, ale i autorskie meble oraz lampy. Zamiast skali stawiamy na unikalność - każdy obiekt powstaje w naszej pracowni, pod naszą pełną autorską kontrolą.";
 
 /** Okładka strony. */
 export const productsCover = {
