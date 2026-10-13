@@ -44,14 +44,6 @@ export function SiteFooter() {
                     {site.email}
                   </a>
                 </li>
-                <li>
-                  <a
-                    href={`tel:${site.phoneHref}`}
-                    className="hover:text-clay-soft transition-colors"
-                  >
-                    {site.phone}
-                  </a>
-                </li>
                 <li className="leading-relaxed">
                   {site.address.street}
                   <br />

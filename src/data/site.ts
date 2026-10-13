@@ -1,6 +1,6 @@
 export const site = {
   name: "TAKA",
-  fullName: "TAKA pracownia architektoniczna",
+  fullName: "TAKA pracownia architektury wnętrz",
   tagline: "Pracownia architektury wnętrz",
   claim:
     "Wnętrza, w których chce się mieszkać. Projektujemy od pierwszej rozmowy do ostatniej książki z wyposażeniem.",
@@ -10,16 +10,16 @@ export const site = {
   city: "Gdańsk Oliwa",
   country: "Polska",
   email: "kontakt@takadesign.studio",
-  phone: "+48 500 000 000",
-  phoneHref: "+48500000000",
+  //phone: "",
+  //phoneHref: "",
   address: {
-    street: "ul. Przykładowa 12/4",
-    postal: "80-322",
+    street: "Pracownia projektowa online. Tworzymy wnętrza dla klientów z całego świata.",
+    postal: "",
     city: "Gdańsk Oliwa",
   },
 
   social: [
-    { label: "Instagram", href: "https://instagram.com" },
+    { label: "Instagram", href: "https://www.instagram.com/taka.wnetrza" },
     //{ label: "Facebook", href: "https://facebook.com" },
     //{ label: "Pinterest", href: "https://pinterest.com" },
     //{ label: "LinkedIn", href: "https://linkedin.com" },

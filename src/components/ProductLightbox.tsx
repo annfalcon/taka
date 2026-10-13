@@ -101,8 +101,8 @@ export function ProductLightbox({
               Pytania? Napisz na{" "}
               <a href={`mailto:${site.email}`} className="underline">
                 {site.email}
-              </a>{" "}
-              lub zadzwoń: {site.phone}.
+              </a>
+              .
             </p>
           </div>
         </div>

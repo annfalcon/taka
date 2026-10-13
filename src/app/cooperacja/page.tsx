@@ -3,8 +3,8 @@ import heroImage from "@/assets/pics/hero.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { process } from "@/data/site";
-import { site } from "@/data/site";
+import Link from "next/link";
+import { process, site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Współpraca",
@@ -95,12 +95,12 @@ export default function CooperationPage() {
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <a
-                href={`tel:${site.phoneHref}`}
+              <Link
+                href="/kontakt"
                 className="border-line hover:border-ink rounded-full border px-8 py-4 text-center text-sm transition-colors"
               >
-                {site.phone}
-              </a>
+                Skontaktuj się
+              </Link>
             </div>
           </Reveal>
         </div>

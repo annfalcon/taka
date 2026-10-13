@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 };
 
 const rows = [
-  { label: "Telefon", value: site.phone, href: `tel:${site.phoneHref}` },
   { label: "E-mail", value: site.email, href: `mailto:${site.email}` },
 ];
 

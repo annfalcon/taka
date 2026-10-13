@@ -56,12 +56,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href={`tel:${site.phoneHref}`}
-            className="hidden text-sm text-muted transition-colors hover:text-ink xl:inline"
-          >
-            {site.phone}
-          </a>
           <Link
             href="/kontakt"
             className="hidden rounded-full bg-ink px-5 py-2.5 text-sm text-paper transition-colors hover:bg-clay sm:inline-block"
@@ -102,12 +96,6 @@ export function SiteHeader() {
               <span className="text-muted text-sm">0{i + 1}</span>
             </Link>
           ))}
-          <a
-            href={`tel:${site.phoneHref}`}
-            className="text-muted mt-6 text-sm"
-          >
-            {site.phone}
-          </a>
         </nav>
       </div>
     </header>
