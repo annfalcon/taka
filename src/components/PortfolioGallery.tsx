@@ -104,6 +104,9 @@ export function PortfolioGallery({
                   {p.photos.length} zdjęć w realizacji
                 </p>
               )}
+              <p>
+                {p.description}
+              </p>
             </button>
           </li>
         ))}

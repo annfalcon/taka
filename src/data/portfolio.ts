@@ -50,6 +50,7 @@ export type Project = {
   slug: string;
   title: string;
   category: Category;
+  description?: string;
   summary: string;
   /** Pierwsze zdjęcie — karta w galerii i miniatura. */
   photo: StaticImageData;
@@ -66,7 +67,8 @@ export const categories: Category[] = ["Mieszkania"];
 export const projects: Project[] = [
   {
     slug: "apartament-a1",
-    title: "Apartament A1",
+    title: "Mieszkanie Warszawa Wilanów",
+    description:"Całe mieszkanie zostało połączone jednolitą myślą przewodnią: głębokie szarości, czarne matowe detale oraz subtelne, liniowe oświetlenie LED tworzą kameralny, wręcz wieczorowy klimat w każdym pomieszczeniu. Otwarta strefa dzienna z aneksem kuchennym płynnie łączy się z prywatnym ogródkiem, a lustrzane zabudowy i przemyślane meble na wymiar maksymalizują funkcjonalność bez przytłaczania metrażu. To harmonijny azyl zaprojektowany z myślą o odpoczynku od miejskiego zgiełku.",
     category: "Mieszkania",
     summary:
       "Pełen zakres realizacji mieszkania - od układu funkcjonalnego po wyposażenie poszczególnych pomieszczeń.",
@@ -82,11 +84,12 @@ export const projects: Project[] = [
   },
   {
     slug: "apartament-a2",
-    title: "Apartament A2",
+    title: "Kamienica Dwupoziomowa Warszawa",
+    description:"W odpowiedzi na potrzebę wyciszenia stworzyliśmy wnętrze sprzyjające relaksowi. Jednym z kluczowych zadań było rozplanowanie dwóch łazienek o odmiennych funkcjach. Aby uniknąć monotonii, postawiliśmy na wyraźny kontrast: funkcjonalną strefę walk-in skontrastowaliśmy z naszą koncepcją nastrojowego SPA, przełamanego akcentem głębokiego szmaragdu.",
     category: "Mieszkania",
     summary:
-      "Apartament dwupoziomowy — przestronny salon ze strefą wypoczynku, sypialnia i dwie łazienki na dwóch kondygnacjach.",
-    photo: salonA2,
+      "",
+    photo: salonA2, 
     photos: [
       { image: salonA2, alt: "Salon w apartamencie A2", label: "Salon" },
       { image: sypialniaA2, alt: "Sypialnia w apartamencie A2", label: "Sypialnia" },
@@ -96,7 +99,8 @@ export const projects: Project[] = [
   },
   {
     slug: "apartament-a3",
-    title: "Apartament A3",
+    title: "Kamienica z Kominkiem w Gdańsku",
+    description: "Klienci pragnęli wnętrza z duszą o wyrazistym, nietuzinkowym charakterze z odniesieniami do stylu retro, vintage oraz klimatu klasycznych kamienic. Wykorzystaliśmy czerwoną, postarzaną cegłę na ścianie w strefie dziennej i kuchennej oraz zaprojektowaliśmy minimalistyczną obudowę kominka z podświetlaną, pionową wnęką na drewno. Dobraliśmy czarną i mosiężną armaturę oraz uchwyty, a także ozdobne, drewniane osłony grzejnikowe i oprawy drzwiowe, które spinają całe mieszkanie w spójną całość.",
     category: "Mieszkania",
     summary:
       "Mieszkanie w kamienicy — salon z kominkiem, duży pokój, kuchnia, sypialnia i przedpokój w kameralnej, klasycznej scenerii.",
@@ -112,7 +116,8 @@ export const projects: Project[] = [
   },
   {
     slug: "apartament-a4",
-    title: "Apartament A4",
+    title: "Nowoczesne Mieszkanie Rodzinne w Warszawie",
+    description: "Inwestorami tego projektu była młoda rodzina z dzieckiem, która marzyła o stworzeniu ciepłej, niezwykle funkcjonalnej i bezpiecznej przestrzeni do wspólnego życia. W odpowiedzi na ich potrzeby połączyliśmy szlachetny dąb z jasnymi, neutralnymi barwami i nastrojowym oświetleniem LED, dbając o dużą ilość ukrytej zabudowy do przechowywania. Stworzyliśmy przestronną łazienkę rodzinną z wanną i dwiema umywalkami oraz drugą, szybką strefę z prysznicem walk-in. Dopełnieniem całości jest bajkowy pokój dla dziecka z łóżkiem-domkiem i motywem górskich szczytów, w którym maluch może swobodnie się bawić i odpoczywać.",
     category: "Mieszkania",
     summary:
       "Apartament rodzinny — salon, pokój dziecka oraz dwie łazienki w jasnej, spójnej aranżacji.",
@@ -126,7 +131,8 @@ export const projects: Project[] = [
   },
   {
     slug: "apartament-a5",
-    title: "Apartament A5",
+    title: "Mieszkanie Z Otwartą Strefą Dzienną w Warszawie",
+    description: "Chęć obcowania z naturą zainspirowała nas do stworzenia wnętrza w ciepłych odcieniach ziemi, pięknie wyeksponowanych przez światło wypełniające przestrzeń. Główną osią projektu jest otwarta, funkcjonalna strefa dzienna. Indywidualny charakter aranżacji nadają autorskie akcenty – ściana z białej cegły w salonie, botaniczna tapeta w toalecie, mosiężne detale oraz przytulne tkaniny. Dzięki dyskretnym zabudowom na wymiar i dębowemu stołowi w jadalni, mieszkanie zyskało harmonijny i wysoce praktyczny wymiar.",
     category: "Mieszkania",
     summary:
       "Mieszkanie z otwartą strefą dzienną — funkcjonalna kuchnia, salon, sypialnia i łazienka.",
