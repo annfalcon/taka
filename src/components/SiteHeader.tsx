@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import logo from "@/assets/logo/logoT.svg";
 import { nav, site } from "@/data/site";
+import { SocialIcon } from "@/components/SocialIcon";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -53,6 +54,18 @@ export function SiteHeader() {
               />
             </Link>
           ))}
+          {site.social.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label={s.label}
+              className="text-muted hover:text-ink transition-colors"
+            >
+              <SocialIcon label={s.label} className="h-5 w-5" />
+            </a>
+          ))}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -81,7 +94,7 @@ export function SiteHeader() {
 
       <div
         className={`overflow-hidden bg-paper transition-[max-height,opacity] duration-500 ease-out-expo lg:hidden ${
-          open ? "max-h-[26rem] opacity-100" : "max-h-0 opacity-0"
+          open ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <nav className="container-x flex flex-col pt-2 pb-8">
@@ -95,6 +108,19 @@ export function SiteHeader() {
               {item.label}
               <span className="text-muted text-sm">0{i + 1}</span>
             </Link>
+          ))}
+          {site.social.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer noopener"
+              onClick={() => setOpen(false)}
+              className="border-line flex items-center gap-3 border-b py-4 font-display text-3xl"
+            >
+              <SocialIcon label={s.label} className="h-7 w-7" />
+              {s.label}
+            </a>
           ))}
         </nav>
       </div>

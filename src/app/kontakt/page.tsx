@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/data/site";
+import { SocialIcon } from "@/components/SocialIcon";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 
 const rows = [
   { label: "E-mail", value: site.email, href: `mailto:${site.email}` },
+  { label: "Telefon", value: site.phone, href: `tel:${site.phoneHref}` },
 ];
 
 export default function ContactPage() {
@@ -75,6 +77,7 @@ export default function ContactPage() {
                     rel="noreferrer noopener"
                     className="text-muted hover:text-ink inline-flex items-center gap-1.5 text-sm transition-colors"
                   >
+                    <SocialIcon label={s.label} />
                     {s.label}
                     <span className="text-[0.6rem] opacity-50" aria-hidden>
                       ↗

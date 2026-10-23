@@ -55,7 +55,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pl" className={`${fraunces.variable} ${inter.variable}`}>
+    <html
+      lang="pl"
+      className={`${fraunces.variable} ${inter.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           // Runs before paint so scroll-reveal styles apply without a flash.

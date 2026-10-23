@@ -10,8 +10,8 @@ export const site = {
   city: "Gdańsk Oliwa",
   country: "Polska",
   email: "kontakt@takadesign.studio",
-  //phone: "",
-  //phoneHref: "",
+  phone: "+48 794 941 806",
+  phoneHref: "+48794941806",
   address: {
     street: "Pracownia projektowa online. Projektujemy wnętrza dla każdego i bez barier lokalizacyjnych.",
     postal: "",

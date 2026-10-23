@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { nav, site } from "@/data/site";
+import { SocialIcon } from "@/components/SocialIcon";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -44,6 +45,14 @@ export function SiteFooter() {
                     {site.email}
                   </a>
                 </li>
+                <li>
+                  <a
+                    href={`tel:${site.phoneHref}`}
+                    className="hover:text-clay-soft transition-colors"
+                  >
+                    {site.phone}
+                  </a>
+                </li>
                 <li className="leading-relaxed">
                   {site.address.street}
                   <br />
@@ -63,6 +72,7 @@ export function SiteFooter() {
                       rel="noreferrer noopener"
                       className="text-paper/80 hover:text-clay-soft inline-flex items-center gap-2 transition-colors"
                     >
+                      <SocialIcon label={s.label} />
                       {s.label}
                       <span className="text-[0.6rem] opacity-50" aria-hidden>
                         ↗
