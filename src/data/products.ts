@@ -16,6 +16,7 @@
 import type { StaticImageData } from "next/image";
 
 import domekDlaPsa from "@/assets/pics/our-products/domek-dla-psa.jpg";
+import wineRack from "@/assets/pics/our-products/winerack.jpg";
 import lampaOkno from "@/assets/pics/our-products/lampa/lampa-okno.jpg";
 import ogolne from "@/assets/pics/our-products/ogolne.jpg";
 import stolik from "@/assets/pics/our-products/stolik.jpg";
@@ -26,7 +27,7 @@ import retroHarmonia from "@/assets/pics/our-products/konsole/retroharmonia.jpg"
 import retroImpuls from "@/assets/pics/our-products/konsole/retroimpuls.jpg";
 import vinylLoft from "@/assets/pics/our-products/konsole/vinylloft.jpg";
 
-export type ProductCategory = "Lampy" | "Stoliki" | "Biurka" | "Dla domu" | "Konsole";
+export type ProductCategory = "Stoliki" | "Biurka" | "Dla domu" | "Konsole";
 
 export type Product = {
   slug: string;
@@ -41,7 +42,6 @@ export type Product = {
 };
 
 export const productCategories: ProductCategory[] = [
-  "Lampy",
   "Stoliki",
   "Biurka",
   "Dla domu",
@@ -91,9 +91,18 @@ export const products: Product[] = [
     lead: "Domek dla psa — wnętrze, które kończy się na kanapie.",
   },
   {
+    slug: "wine-rack",
+    name: "Wine Rack",
+    category: "Dla domu",
+    image: wineRack,
+    imagePosition: "left",
+    alt: "Wine Rack — produkt pracowni TAKA",
+    lead: "Autorski element wyposażenia domu, projektowany i wykonywany w naszej pracowni.",
+  },
+  {
     slug: "lampa-alma",
     name: "Lampa Alma",
-    category: "Lampy",
+    category: "Dla domu",
     image: lampaOkno,
     alt: "Lampa Alma — produkt pracowni TAKA",
     lead: "Lampa o konstrukcji nawiązującej do okna. Światło ukierunkowane, konstrukcja lekka.",

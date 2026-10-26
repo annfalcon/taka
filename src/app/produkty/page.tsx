@@ -8,7 +8,7 @@ import { products, productsCover, productsIntro } from "@/data/products";
 export const metadata: Metadata = {
   title: "Nasze produkty",
   description:
-    "Lampy, stoliki, biurka i drobiazgi projektowane i wytwarzane przez pracownię TAKA. Produkty z małych serii.",
+    "Stoliki, biurka, konsole i drobiazgi projektowane i wytwarzane przez pracownię TAKA. Produkty z małych serii.",
 };
 
 export default function ProductsPage() {
