@@ -33,6 +33,7 @@ export type Product = {
   name: string;
   category: ProductCategory;
   image: StaticImageData;
+  imagePosition?: "left" | "center" | "right";
   alt: string;
   lead: string;
   specs?: { label: string; value: string }[];
@@ -102,6 +103,7 @@ export const products: Product[] = [
     name: "Konsola Retro Harmonia",
     category: "Konsole",
     image: retroHarmonia,
+    imagePosition: "left",
     alt: "Konsola Retro Harmonia — produkt pracowni TAKA",
     lead: "Konsola o retro formie, która porządkuje wnętrze i nadaje mu charakter.",
   },
@@ -110,6 +112,7 @@ export const products: Product[] = [
     name: "Konsola Retro Impuls",
     category: "Konsole",
     image: retroImpuls,
+    imagePosition: "left",
     alt: "Konsola Retro Impuls — produkt pracowni TAKA",
     lead: "Smukła konsola z wyrazistym detalem — do przedpokoju, salonu lub sypialni.",
   },
@@ -118,6 +121,7 @@ export const products: Product[] = [
     name: "Konsola Vinyl Loft",
     category: "Konsole",
     image: vinylLoft,
+    imagePosition: "left",
     alt: "Konsola Vinyl Loft — produkt pracowni TAKA",
     lead: "Loftowa konsola łącząca prostą bryłę z ciepłem naturalnego drewna.",
   },

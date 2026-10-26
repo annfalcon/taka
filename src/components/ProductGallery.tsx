@@ -66,7 +66,13 @@ export function ProductGallery() {
                   fill
                   loading={i < 3 ? "eager" : "lazy"}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-[900ms] ease-out-expo group-hover:scale-[1.04]"
+                  className={`object-cover ${
+                    p.imagePosition === "left"
+                      ? "object-left"
+                      : p.imagePosition === "right"
+                        ? "object-right"
+                        : "object-center"
+                  } transition-transform duration-[900ms] ease-out-expo group-hover:scale-[1.04]`}
                 />
               </div>
 
