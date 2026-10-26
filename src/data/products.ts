@@ -22,8 +22,11 @@ import stolik from "@/assets/pics/our-products/stolik.jpg";
 import stolikSkladany from "@/assets/pics/our-products/stolik-skladany.jpg";
 import biurko10 from "@/assets/pics/our-products/biurko/biurko1-0.jpg";
 import stolikEnzo from "@/assets/pics/our-products/stolik-enzo.jpg";
+import retroHarmonia from "@/assets/pics/our-products/konsole/retroharmonia.jpg";
+import retroImpuls from "@/assets/pics/our-products/konsole/retroimpuls.jpg";
+import vinylLoft from "@/assets/pics/our-products/konsole/vinylloft.jpg";
 
-export type ProductCategory = "Lampy" | "Stoliki" | "Biurka" | "Dla domu";
+export type ProductCategory = "Lampy" | "Stoliki" | "Biurka" | "Dla domu" | "Konsole";
 
 export type Product = {
   slug: string;
@@ -41,6 +44,7 @@ export const productCategories: ProductCategory[] = [
   "Stoliki",
   "Biurka",
   "Dla domu",
+  "Konsole"
 ];
 
 export const products: Product[] = [
@@ -92,6 +96,30 @@ export const products: Product[] = [
     image: lampaOkno,
     alt: "Lampa Alma — produkt pracowni TAKA",
     lead: "Lampa o konstrukcji nawiązującej do okna. Światło ukierunkowane, konstrukcja lekka.",
+  },
+  {
+    slug: "konsola-retro-harmonia",
+    name: "Konsola Retro Harmonia",
+    category: "Konsole",
+    image: retroHarmonia,
+    alt: "Konsola Retro Harmonia — produkt pracowni TAKA",
+    lead: "Konsola o retro formie, która porządkuje wnętrze i nadaje mu charakter.",
+  },
+  {
+    slug: "konsola-retro-impuls",
+    name: "Konsola Retro Impuls",
+    category: "Konsole",
+    image: retroImpuls,
+    alt: "Konsola Retro Impuls — produkt pracowni TAKA",
+    lead: "Smukła konsola z wyrazistym detalem — do przedpokoju, salonu lub sypialni.",
+  },
+  {
+    slug: "konsola-vinyl-loft",
+    name: "Konsola Vinyl Loft",
+    category: "Konsole",
+    image: vinylLoft,
+    alt: "Konsola Vinyl Loft — produkt pracowni TAKA",
+    lead: "Loftowa konsola łącząca prostą bryłę z ciepłem naturalnego drewna.",
   },
 ];
 
