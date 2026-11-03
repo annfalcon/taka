@@ -23,6 +23,8 @@ import stolik from "@/assets/pics/our-products/stolik.jpg";
 import stolikSkladany from "@/assets/pics/our-products/stolik-skladany.jpg";
 import biurko10 from "@/assets/pics/our-products/biurko/biurko1-0.jpg";
 import stolikEnzo from "@/assets/pics/our-products/stolik-enzo.jpg";
+import dm1 from "@/assets/pics/our-products/drewnianamuszla/dm1.jpg";
+import dm2 from "@/assets/pics/our-products/drewnianamuszla/dm2.jpg";
 import retroHarmonia from "@/assets/pics/our-products/konsole/retroharmonia.jpg";
 import retroImpuls from "@/assets/pics/our-products/konsole/retroimpuls.jpg";
 import vinylLoft from "@/assets/pics/our-products/konsole/vinylloft.jpg";
@@ -34,6 +36,7 @@ export type Product = {
   name: string;
   category: ProductCategory;
   image: StaticImageData;
+  images?: StaticImageData[];
   imagePosition?: "left" | "center" | "right";
   alt: string;
   lead: string;
@@ -81,6 +84,15 @@ export const products: Product[] = [
     image: stolikEnzo,
     alt: "Stolik Enzo — produkt pracowni TAKA",
     lead: "Stolik o wyraźnej, konstrukcyjnej formie — prosty, lecz bardzo charakterystyczny.",
+  },
+  {
+    slug: "drewniana-muszla",
+    name: "Drewniana Muszla",
+    category: "Stoliki",
+    image: dm1,
+    images: [dm1, dm2],
+    alt: "Drewniana Muszla — produkt pracowni TAKA",
+    lead: "Stolik o organicznej, muszlowej formie — ciepło drewna i miękka linia.",
   },
   {
     slug: "domek-roof",

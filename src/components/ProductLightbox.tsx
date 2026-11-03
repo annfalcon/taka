@@ -29,6 +29,8 @@ export function ProductLightbox({
 
   if (!product) return null;
 
+  const images = product.images?.length ? product.images : [product.image];
+
   return (
     <div role="dialog" aria-modal="true" aria-label={product.name} className="fixed inset-0 z-90">
       <button
@@ -57,15 +59,34 @@ export function ProductLightbox({
         </div>
 
         <div className="container-x flex-1 pb-10">
-          <div className="relative mx-auto aspect-4/5 w-full max-w-2xl overflow-hidden bg-ink-2">
-            <Image
-              src={product.image}
-              alt={product.alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 672px"
-              className="object-contain"
-              quality={85}
-            />
+          <div
+            className={`mx-auto grid w-full gap-4 ${
+              images.length > 1 ? "max-w-4xl sm:grid-cols-2" : "max-w-2xl"
+            }`}
+          >
+            {images.map((image, i) => (
+              <div
+                key={i}
+                className="relative aspect-4/5 w-full overflow-hidden bg-ink-2"
+              >
+                <Image
+                  src={image}
+                  alt={
+                    images.length > 1
+                      ? `${product.alt} — zdjęcie ${i + 1}`
+                      : product.alt
+                  }
+                  fill
+                  sizes={
+                    images.length > 1
+                      ? "(max-width: 640px) 100vw, 448px"
+                      : "(max-width: 768px) 100vw, 672px"
+                  }
+                  className="object-contain"
+                  quality={85}
+                />
+              </div>
+            ))}
           </div>
 
           <div className="mx-auto mt-10 max-w-2xl">
