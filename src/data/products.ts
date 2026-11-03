@@ -19,7 +19,7 @@ import domekDlaPsa from "@/assets/pics/our-products/domek-dla-psa.jpg";
 import wineRack1 from "@/assets/pics/our-products/dla-domu/winerack/wr1.jpg";
 import wineRack2 from "@/assets/pics/our-products/dla-domu/winerack/wr2.jpg";
 import lampaOkno from "@/assets/pics/our-products/lampa/lampa-okno.jpg";
-import ogolne from "@/assets/pics/our-products/ogolne.jpg";
+import showcase from "@/assets/pics/our-products/showcase.jpg";
 import stolik from "@/assets/pics/our-products/stolik.jpg";
 import stolikSkladany from "@/assets/pics/our-products/stolik-skladany.jpg";
 import biurko10 from "@/assets/pics/our-products/biurko/biurko1-0.jpg";
@@ -161,6 +161,6 @@ export const productsIntro =
 
 /** Okładka strony. */
 export const productsCover = {
-  image: ogolne,
+  image: showcase,
   alt: "Produkty pracowni TAKA — zdjęcie zbiorcze",
 };
