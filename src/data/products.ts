@@ -16,7 +16,8 @@
 import type { StaticImageData } from "next/image";
 
 import domekDlaPsa from "@/assets/pics/our-products/domek-dla-psa.jpg";
-import wineRack from "@/assets/pics/our-products/winerack.jpg";
+import wineRack1 from "@/assets/pics/our-products/dla-domu/winerack/wr1.jpg";
+import wineRack2 from "@/assets/pics/our-products/dla-domu/winerack/wr2.jpg";
 import lampaOkno from "@/assets/pics/our-products/lampa/lampa-okno.jpg";
 import ogolne from "@/assets/pics/our-products/ogolne.jpg";
 import stolik from "@/assets/pics/our-products/stolik.jpg";
@@ -25,11 +26,14 @@ import biurko10 from "@/assets/pics/our-products/biurko/biurko1-0.jpg";
 import stolikEnzo from "@/assets/pics/our-products/stolik-enzo.jpg";
 import dm1 from "@/assets/pics/our-products/drewnianamuszla/dm1.jpg";
 import dm2 from "@/assets/pics/our-products/drewnianamuszla/dm2.jpg";
-import retroHarmonia from "@/assets/pics/our-products/konsole/retroharmonia.jpg";
-import retroImpuls from "@/assets/pics/our-products/konsole/retroimpuls.jpg";
-import vinylLoft from "@/assets/pics/our-products/konsole/vinylloft.jpg";
+import retroHarmonia1 from "@/assets/pics/our-products/konsole/retroharmonia/rh1.jpg";
+import retroHarmonia2 from "@/assets/pics/our-products/konsole/retroharmonia/rh2.jpg";
+import retroImpuls1 from "@/assets/pics/our-products/konsole/retroimpuls/ri1.jpg";
+import retroImpuls2 from "@/assets/pics/our-products/konsole/retroimpuls/ri2.jpg";
+import vinylLoft1 from "@/assets/pics/our-products/konsole/vinylloft/vl1.jpg";
+import vinylLoft2 from "@/assets/pics/our-products/konsole/vinylloft/vl2.jpg";
 
-export type ProductCategory = "Stoliki" | "Biurka" | "Dla domu" | "Konsole";
+export type ProductCategory = "Stoliki" | "Domowe akcenty" | "Konsole";
 
 export type Product = {
   slug: string;
@@ -46,8 +50,7 @@ export type Product = {
 
 export const productCategories: ProductCategory[] = [
   "Stoliki",
-  "Biurka",
-  "Dla domu",
+  "Domowe akcenty",
   "Konsole"
 ];
 
@@ -72,7 +75,7 @@ export const products: Product[] = [
     {
     slug: "biurko-hugo",
     name: "Biurko Hugo",  
-    category: "Biurka",
+    category: "Stoliki",
     image: biurko10,
     alt: "Biurko Hugo — produkt pracowni TAKA",
     lead: "Pierwsza wersja biurka z oferty. Wersja bazowa.",
@@ -97,7 +100,7 @@ export const products: Product[] = [
   {
     slug: "domek-roof",
     name: "Domek Roof",
-    category: "Dla domu",
+    category: "Domowe akcenty",
     image: domekDlaPsa,
     alt: "Domek Roof — produkt pracowni TAKA",
     lead: "Domek dla psa — wnętrze, które kończy się na kanapie.",
@@ -105,8 +108,9 @@ export const products: Product[] = [
   {
     slug: "wine-rack",
     name: "Wine Rack",
-    category: "Dla domu",
-    image: wineRack,
+    category: "Domowe akcenty",
+    image: wineRack1,
+    images: [wineRack1, wineRack2],
     imagePosition: "left",
     alt: "Wine Rack — produkt pracowni TAKA",
     lead: "Autorski element wyposażenia domu, projektowany i wykonywany w naszej pracowni.",
@@ -114,7 +118,7 @@ export const products: Product[] = [
   {
     slug: "lampa-alma",
     name: "Lampa Alma",
-    category: "Dla domu",
+    category: "Domowe akcenty",
     image: lampaOkno,
     alt: "Lampa Alma — produkt pracowni TAKA",
     lead: "Lampa o konstrukcji nawiązującej do okna. Światło ukierunkowane, konstrukcja lekka.",
@@ -123,7 +127,8 @@ export const products: Product[] = [
     slug: "konsola-retro-harmonia",
     name: "Konsola Retro Harmonia",
     category: "Konsole",
-    image: retroHarmonia,
+    image: retroHarmonia1,
+    images: [retroHarmonia1, retroHarmonia2],
     imagePosition: "left",
     alt: "Konsola Retro Harmonia — produkt pracowni TAKA",
     lead: "Konsola o retro formie, która porządkuje wnętrze i nadaje mu charakter.",
@@ -132,7 +137,8 @@ export const products: Product[] = [
     slug: "konsola-retro-impuls",
     name: "Konsola Retro Impuls",
     category: "Konsole",
-    image: retroImpuls,
+    image: retroImpuls1,
+    images: [retroImpuls1, retroImpuls2],
     imagePosition: "left",
     alt: "Konsola Retro Impuls — produkt pracowni TAKA",
     lead: "Smukła konsola z wyrazistym detalem — do przedpokoju, salonu lub sypialni.",
@@ -141,7 +147,8 @@ export const products: Product[] = [
     slug: "konsola-vinyl-loft",
     name: "Konsola Vinyl Loft",
     category: "Konsole",
-    image: vinylLoft,
+    image: vinylLoft1,
+    images: [vinylLoft1, vinylLoft2],
     imagePosition: "left",
     alt: "Konsola Vinyl Loft — produkt pracowni TAKA",
     lead: "Loftowa konsola łącząca prostą bryłę z ciepłem naturalnego drewna.",
