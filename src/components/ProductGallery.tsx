@@ -24,7 +24,7 @@ export function ProductGallery() {
 
   return (
     <>
-      <div className="no-scrollbar -mx-5 mb-12 flex gap-2 overflow-x-auto px-5 pb-1 md:mx-0 md:mb-16 md:flex-wrap md:px-0">
+      <div className="mb-12 flex flex-wrap gap-2 md:mb-16">
         {([ALL, ...productCategories] as Filter[]).map((opt) => {
           const on = filter === opt;
           const count =
